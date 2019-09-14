@@ -15,16 +15,15 @@ class Login extends Component{
     });
   }
 
-  componentDidMount() {
-    var aScript = document.createElement('script');
-    aScript.type = 'text/javascript';
-    aScript.src = "https://sbhc.portalhc.com/219008/searchbox/468509";
+  componentDidMount () {
+    const script = document.createElement("script");
 
-    document.head.appendChild(aScript);
-    aScript.onload = function() {
-        document.getElementById("box").InnerHTML = hello;
-    };
+    script.src = "https://sbhc.portalhc.com/219008/searchbox/468509";
+    script.async = true;
+
+    document.body.appendChild(script);
 }
+
 
   render(){
     return (
@@ -44,6 +43,8 @@ class Login extends Component{
           <button onClick={()=>this.login()}>Register</button>
 
           <div id="box"></div>
+
+          <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
       </div>
     );
   }
