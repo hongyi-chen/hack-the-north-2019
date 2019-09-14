@@ -14,6 +14,10 @@ class App extends Component{
       password: this.state.password
     }).then((res)=>{
     });
+
+    axios.get('http://accentour.com/get_all_tours').then((res)=>{
+      console.log(res);
+    })
   }
 
   render(){
