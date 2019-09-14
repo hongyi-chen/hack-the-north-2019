@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './login.css';
 
-class Login extends Component{
+class login extends Component{
   state = {
     username: null,
     password: null
@@ -23,7 +24,6 @@ class Login extends Component{
 
     document.body.appendChild(script);
 }
-
 
   render(){
     return (
@@ -50,4 +50,4 @@ class Login extends Component{
   }
 }
 
-export default Login;
+export default login;

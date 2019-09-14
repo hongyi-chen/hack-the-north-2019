@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import './assets/css/main.css';
 import './assets/css/main.css';
 import './assets/css/images/bg01.png';
 
-class App extends Component {
+class home extends Component {
   render() {
     return (
       <div id="page-wrapper">
@@ -50,4 +49,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default home;
