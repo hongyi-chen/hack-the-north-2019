@@ -25,20 +25,18 @@ class login extends Component{
             onChange={(e)=> this.setState.username=e.target.value}
             style={{ width: '200px' }}
           />
-          <input
+        <input
             type="text"
             placeholder="Password"
             onChange={(e)=> this.setState.password=e.target.value}
             style={{ width: '200px' }}
-          />
-          <button onClick={()=>this.login()}>Register</button>
+        />
+        <button onClick={()=>this.login()}>Register</button>
 
           <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
       </div>
     );
   }
 }
-
-
 
 export default login;

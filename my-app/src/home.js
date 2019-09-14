@@ -11,13 +11,13 @@ class home extends Component {
           <header id="header" className="container">
             {/* Logo */}
             <div id="logo">
-              <h1><a href="index.html">Project Name</a></h1>
+              <h1>Project Name</h1>
               <span>powered by Accenture.</span>
             </div>
             {/* Nav */}
             <nav id="nav">
               <ul>
-                <li className="current"><a>Log In</a></li>
+                <li className="current"><a href = "login">Log In</a></li>
               </ul>
             </nav>
           </header>
@@ -28,7 +28,7 @@ class home extends Component {
             <div className="row">
               <div className="col-7 col-12-medium">
                 <h2>Hi. Welcome to Project Name.</h2>
-                <p>The best resource to book your Canadian university tour</p>
+                <p>The best resource to book your Canadian university tour.</p>
               </div>
               <div className="col-5 col-12-medium">
                 <ul>
