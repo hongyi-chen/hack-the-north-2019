@@ -15,6 +15,17 @@ class Login extends Component{
     });
   }
 
+  componentDidMount() {
+    var aScript = document.createElement('script');
+    aScript.type = 'text/javascript';
+    aScript.src = "https://sbhc.portalhc.com/219008/searchbox/468509";
+
+    document.head.appendChild(aScript);
+    aScript.onload = function() {
+        document.getElementById("box").InnerHTML = hello;
+    };
+}
+
   render(){
     return (
       <div>
@@ -31,6 +42,8 @@ class Login extends Component{
             style={{ width: '200px' }}
           />
           <button onClick={()=>this.login()}>Register</button>
+
+          <div id="box"></div>
       </div>
     );
   }
