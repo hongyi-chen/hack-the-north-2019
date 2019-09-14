@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class Book extends Component{
+class book extends Component{
 
   componentDidMount () {
     const script = document.createElement("script");
@@ -19,4 +19,4 @@ class Book extends Component{
   }
 }
 
-export default Book;
+export default book;

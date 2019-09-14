@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './login.css';
 
-class login extends Component{
+class registration extends Component{
   state = {
     username: null,
     password: null
   };
 
-  login = () => {
+  registration = () => {
     axios.post('http:/localhost:4000/login',{
       username: this.state.username,
       password: this.state.password
@@ -59,4 +59,4 @@ class login extends Component{
   }
 }
 
-export default login;
+export default registration;
