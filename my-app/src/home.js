@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './assets/css/main.css';
-import './assets/css/main.css';
 import './assets/css/images/bg01.png';
 
 class home extends Component {
@@ -13,7 +12,7 @@ class home extends Component {
             {/* Logo */}
             <div id="logo">
               <h1><a href="index.html">Project Name</a></h1>
-              <span>powered by Accenture</span>
+              <span>powered by Accenture.</span>
             </div>
             {/* Nav */}
             <nav id="nav">

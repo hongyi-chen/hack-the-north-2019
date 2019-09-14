@@ -16,15 +16,6 @@ class login extends Component{
     });
   }
 
-  componentDidMount () {
-    const script = document.createElement("script");
-
-    script.src = "https://sbhc.portalhc.com/219008/searchbox/468509";
-    script.async = true;
-
-    document.body.appendChild(script);
-}
-
   render(){
     return (
       <div>
@@ -42,12 +33,12 @@ class login extends Component{
           />
           <button onClick={()=>this.login()}>Register</button>
 
-          <div id="box"></div>
-
           <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
       </div>
     );
   }
 }
+
+
 
 export default login;
