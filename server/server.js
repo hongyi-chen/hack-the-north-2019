@@ -10,10 +10,11 @@ app.use(bodyParser.urlencoded());
 app.use(cors());
 
 app.post('/signup', function (req, res){
-	axios.get('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/create_user?username'+req.body.username)
-	.then((res)=>{
-      this.res.
-    })
+	axios.post('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/create_user?username'
+		+req.body.username).then((res)=>{
+			console.log(res);
+		});
+	
 	res.send(200);
 });
 
