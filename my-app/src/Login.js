@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import './App.css';
 
-class App extends Component{
+class Login extends Component{
   state = {
     username: null,
     password: null
@@ -37,4 +36,4 @@ class App extends Component{
   }
 }
 
-export default App;
+export default Login;
