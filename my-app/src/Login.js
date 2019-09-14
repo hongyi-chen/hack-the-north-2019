@@ -15,15 +15,6 @@ class Login extends Component{
     });
   }
 
-  componentDidMount () {
-    const script = document.createElement("script");
-
-    script.src = "https://sbhc.portalhc.com/219008/searchbox/468509";
-    script.async = true;
-
-    document.body.appendChild(script);
-}
-
 
   render(){
     return (
@@ -41,8 +32,6 @@ class Login extends Component{
             style={{ width: '200px' }}
           />
           <button onClick={()=>this.login()}>Register</button>
-
-          <div id="box"></div>
 
           <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
       </div>

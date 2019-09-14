@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import './assets/css/main.css';
 import './assets/css/main.css';
 import './assets/css/images/bg01.png';
