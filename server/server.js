@@ -27,6 +27,16 @@ app.post('/book', function (req, res){
 	res.send(200);
 });
 
+app.post('/flights', function (req, res){
+	res.send(200);
+});
+
+app.post('/hotels', function (req, res){
+	res.send(200);
+});
+
+
+
 
 const port = process.env.API_PORT || 4000;
 
