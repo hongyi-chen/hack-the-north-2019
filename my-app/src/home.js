@@ -1,9 +1,32 @@
 import React, { Component } from 'react';
+import {BrowserRoouter as Router, Route, Link, Redirect} from "react-router-dom";
+
 import './assets/css/main.css';
 import './assets/css/images/bg01.png';
 
 class home extends Component {
+
+  state = {
+    isStudent: false,
+    isBroker: false
+  }
+
+  student(){
+    this.setState({isStudent: true});
+  }
+
+  broker(){
+    this.setState({isBroker: true});
+  }
+
   render() {
+    if(this.state.isStudent){
+      return <Redirect to = {{pathname:"/registration", data: { personStatus:"student" }}}/>;
+    }
+    if(this.state.isBroker){
+      return <Redirect to = {{pathname:"/registration", data: { personStatus:"broker" }}}/>;
+    }
+
     return (
       <div id="page-wrapper">
         {/* Header */}
@@ -11,7 +34,7 @@ class home extends Component {
           <header id="header" className="container">
             {/* Logo */}
             <div id="logo">
-              <h1>Project Name</h1>
+              <h1>tourhub</h1>
               <span>powered by Accenture.</span>
             </div>
             {/* Nav */}
@@ -27,13 +50,13 @@ class home extends Component {
           <div id="banner" className="box container">
             <div className="row">
               <div className="col-7 col-12-medium">
-                <h2>Hi. Welcome to Project Name.</h2>
+                <h2>Hi. Welcome to tourhub.</h2>
                 <p>The best resource to book your Canadian university tour.</p>
               </div>
               <div className="col-5 col-12-medium">
                 <ul>
-                  <li><a className="button large icon solid fa-user">Student</a></li>
-                  <li><a className="button alt large icon solid fa-users">Broker</a></li>
+                  <li><a className="button large icon solid fa-user" onClick = {()=> this.student()}>Student</a></li>
+                  <li><a className="button alt large icon solid fa-users" onClick = {()=> this.broker()}>Broker</a></li>
                 </ul>
               </div>
             </div>

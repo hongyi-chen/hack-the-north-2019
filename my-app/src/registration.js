@@ -5,13 +5,19 @@ import './login.css';
 class registration extends Component{
   state = {
     username: null,
-    password: null
+	password: null,
+	firstName: null,
+	lastName: null,
+	email: null
   };
 
   registration = () => {
     axios.post('http:/localhost:4000/login',{
       username: this.state.username,
-      password: this.state.password
+	  password: this.state.password,
+	  firstName: this.state.firstName,
+	  lastName: this.state.lastName,
+	  email: this.state.email,
     }).then((res)=>{
     });
   }
@@ -23,19 +29,19 @@ class registration extends Component{
 			<input className="login"
 				type="text"
 				placeholder="First Name"
-				onChange={(e)=> this.setState.username=e.target.value}
+				onChange={(e)=> this.setState.firstName=e.target.value}
 				style={{ width: '200px' }}
 			  />
 			  <input className="login"
 				type="text"
 				placeholder="Last Name"
-				onChange={(e)=> this.setState.username=e.target.value}
+				onChange={(e)=> this.setState.lastName=e.target.value}
 				style={{ width: '200px' }}
 			  />
 			<input className="login"
 				type="text"
 				placeholder="Email"
-				onChange={(e)=> this.setState.username=e.target.value}
+				onChange={(e)=> this.setState.email=e.target.value}
 				style={{ width: '200px' }}
 			  />
 			<input className="login"
@@ -50,9 +56,8 @@ class registration extends Component{
 				onChange={(e)=> this.setState.password=e.target.value}
 				style={{ width: '200px' }}
 			/>
-			<button className="login" onClick={()=>this.login()}>Login</button>
+			<button className="login" onClick={()=>this.login()}>Register</button>
 		</div>
-
         <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
       </div>
     );
