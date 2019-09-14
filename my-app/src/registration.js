@@ -22,6 +22,24 @@ class login extends Component{
 		<div id="log">
 			<input className="login"
 				type="text"
+				placeholder="First Name"
+				onChange={(e)=> this.setState.username=e.target.value}
+				style={{ width: '200px' }}
+			  />
+			  <input className="login"
+				type="text"
+				placeholder="Last Name"
+				onChange={(e)=> this.setState.username=e.target.value}
+				style={{ width: '200px' }}
+			  />
+			<input className="login"
+				type="text"
+				placeholder="Email"
+				onChange={(e)=> this.setState.username=e.target.value}
+				style={{ width: '200px' }}
+			  />
+			<input className="login"
+				type="text"
 				placeholder="Username"
 				onChange={(e)=> this.setState.username=e.target.value}
 				style={{ width: '200px' }}

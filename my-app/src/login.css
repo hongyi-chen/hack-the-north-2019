@@ -1,0 +1,15 @@
+#log {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.login {
+	display: block;
+	margin: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+input {
+	padding-left: 3px;
+}
