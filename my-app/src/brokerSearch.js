@@ -99,7 +99,7 @@ class brokerSearch extends Component {
                     className="amountTravellers search_input"
                     required="required"
                   >
-                    <option>How many travellers will there be with you?</option>
+                    <option>How many travellers will are there?</option>
                     <option>01</option>
                     <option>02</option>
                     <option>03</option>
