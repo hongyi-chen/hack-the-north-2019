@@ -3,7 +3,7 @@ import "./tourSearch.css";
 import "./login.css";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
- 
+
 const firebaseConfig = {
   apiKey: "AIzaSyC08FLEjf003pV-j9t9pYHs2eu_MahFqfs",
   authDomain: "hack-the-north2019.firebaseapp.com",
@@ -42,9 +42,6 @@ class ProfilePage extends Component {
   };
 }
 
-
-
-
 class brokerSearch extends Component {
   render() {
     return (
@@ -67,7 +64,9 @@ class brokerSearch extends Component {
                 className="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start"
               >
                 <div className="search_item">
-                  <div><strong>Destination</strong></div>
+                  <div>
+                    <strong>Destination</strong>
+                  </div>
                   <input
                     type="text"
                     className="destination search_input"
@@ -76,7 +75,9 @@ class brokerSearch extends Component {
                   />
                 </div>
                 <div className="search_item">
-                  <div><strong>Season of Visit</strong></div>
+                  <div>
+                    <strong>Season of Visit</strong>
+                  </div>
                   <select
                     type="text"
                     className="season search_input"
@@ -86,10 +87,12 @@ class brokerSearch extends Component {
                     <option>Fall</option>
                     <option>Winter</option>
                     <option>Spring</option>
-                      </select>
+                  </select>
                 </div>
                 <div className="search_item">
-                  <div><strong>Amount of travellers</strong></div>
+                  <div>
+                    <strong>Amount of travellers</strong>
+                  </div>
                   <select
                     name="travellers"
                     id="travellers_1"
@@ -131,33 +134,26 @@ class brokerSearch extends Component {
                   <span />
                 </button>
               </form>
+              <div className="search_item">
+          <form>
+            <div>
+              <strong>Upload .CSV (student info):</strong>
+            </div>
+            <FileUploader
+              accept="image/*"
+              name="avatar"
+              randomizeFilename
+              storageRef={firebase.storage().ref("images")}
+              onUploadStart={this.handleUploadStart}
+              onUploadError={this.handleUploadError}
+              onUploadSuccess={this.handleUploadSuccess}
+              onProgress={this.handleProgress}
+            />
+          </form>
+        </div>
             </div>
           </div>
         </div>
-        <div id = "file upload">
-        <form>
-          <label>Username:</label>
-          <input
-            type="text"
-            value={this.setState.username}
-            name="username"
-            onChange={this.handleChangeUsername}
-          />
-          <label>Avatar:</label>
-          {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
-          {this.state.avatarURL && <img src={this.state.avatarURL} />}
-          <FileUploader
-            accept="image/*"
-            name="avatar"
-            randomizeFilename
-            storageRef={firebase.storage().ref("images")}
-            onUploadStart={this.handleUploadStart}
-            onUploadError={this.handleUploadError}
-            onUploadSuccess={this.handleUploadSuccess}
-            onProgress={this.handleProgress}
-          />
-        </form>
-      </div>
       </div>
     );
   }
