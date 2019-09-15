@@ -4,7 +4,6 @@ import login from './login.js';
 import home from './home.js';
 import book from './book.js';
 import registration from './registration.js';
-import tourSearch from './tourSearch.js';
 
 class App extends Component{
   render(){
@@ -14,7 +13,6 @@ class App extends Component{
         <Route exact path = "/login" component = {login}/>
         <Route exact path = "/book" component = {book}/>
         <Route exact path = "/registration" component = {registration}/>
-        <Route exact path = "/tourSearch" component = {tourSearch}/>
       </Router>
     );
   }
