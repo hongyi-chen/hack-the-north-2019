@@ -45,9 +45,9 @@ class login extends Component{
 				style={{ width: '200px' }}
 			  />
 			<input className="login"
-				type="text"
+				type="password"
 				placeholder="Password"
-				onChange={(e)=> this.setState({password: e.target.value})}
+				onChange={(e)=> this.setState.password=e.target.value}
 				style={{ width: '200px' }}
 			/>
 			<button className="login" onClick={()=>this.login()}>Login</button>
