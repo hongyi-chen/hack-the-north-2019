@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class Book extends Component{
-
-    optionState = null;
+class book extends Component{
 
     state = {
         uniCity: null,
@@ -62,4 +60,4 @@ class Book extends Component{
     }
 }
 
-export default Book;
+export default book;

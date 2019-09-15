@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './login.css';
 
-class Login extends Component{
+class login extends Component{
   state = {
     username: null,
     password: null
@@ -15,28 +16,29 @@ class Login extends Component{
     });
   }
 
-
   render(){
     return (
       <div>
-        <input
-            type="text"
-            placeholder="Username"
-            onChange={(e)=> this.setState.username=e.target.value}
-            style={{ width: '200px' }}
-          />
-          <input
-            type="text"
-            placeholder="Password"
-            onChange={(e)=> this.setState.password=e.target.value}
-            style={{ width: '200px' }}
-          />
-          <button onClick={()=>this.login()}>Register</button>
+		<div id="log">
+			<input className="login"
+				type="text"
+				placeholder="Username"
+				onChange={(e)=> this.setState.username=e.target.value}
+				style={{ width: '200px' }}
+			  />
+			<input className="login"
+				type="text"
+				placeholder="Password"
+				onChange={(e)=> this.setState.password=e.target.value}
+				style={{ width: '200px' }}
+			/>
+			<button className="login" onClick={()=>this.login()}>Login</button>
+		</div>
 
-          <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
+        <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
       </div>
     );
   }
 }
 
-export default Login;
+export default login;
