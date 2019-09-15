@@ -56,7 +56,7 @@ class DataController extends React.Component{
   getData(result) {
       this.setState({data: result.data});
   }
-
+/*
   async getCsvData() {
       let csvData = await this.fetchCsv();
 
@@ -64,7 +64,7 @@ class DataController extends React.Component{
           complete: this.getData
       });
   }
-
+*/
   render() {
     return (
         <section className="data-controller">
