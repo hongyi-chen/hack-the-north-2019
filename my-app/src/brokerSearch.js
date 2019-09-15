@@ -25,75 +25,36 @@ class brokerSearch extends Component {
                 className="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start"
               >
                 <div className="search_item">
-                  <div>origin city</div>
+                  <div><strong>Destination</strong></div>
                   <input
                     type="text"
-                    className="origin search_input"
-                    placeholder="What is the city you are starting from?"
+                    className="destination search_input"
+                    placeholder="What is your destination?"
                     required="required"
                   />
                 </div>
                 <div className="search_item">
-                  <div>check in</div>
-                  <input
-                    type="text"
-                    className="check_in search_input"
-                    placeholder="YYYY-MM-DD"
-                    required="required"
-                  />
-                </div>
-                <div className="search_item">
-                  <div>check out</div>
-                  <input
-                    type="text"
-                    className="check_out search_input"
-                    placeholder="YYYY-MM-DD"
-                    required="required"
-                  />
-                </div>
-                <div className="search_item">
-                  <div>adults</div>
+                  <div><strong>Season of Visit</strong></div>
                   <select
-                    name="adults"
-                    id="adults_1"
-                    className="dropdown_item_select search_input"
+                    type="text"
+                    className="season search_input"
                     required="required"
                   >
-                    <option>01</option>
-                    <option>02</option>
-                    <option>03</option>
-                    <option>04</option>
-                    <option>05</option>
-                    <option>06</option>
-                    <option>07</option>
-                    <option>08</option>
-                    <option>09</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
-                    <option>14</option>
-                    <option>15</option>
-                    <option>16</option>
-                    <option>17</option>
-                    <option>18</option>
-                    <option>19</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                  </select>
+                    <option>What season would you like to visit?</option>
+                    <option>Fall</option>
+                    <option>Winter</option>
+                    <option>Spring</option>
+                      </select>
                 </div>
                 <div className="search_item">
-                  <div>children</div>
+                  <div><strong>Amount of travellers</strong></div>
                   <select
-                    name="children"
-                    id="children_1"
-                    className="dropdown_item_select search_input"
+                    name="travellers"
+                    id="travellers_1"
+                    className="amountTravellers search_input"
                     required="required"
                   >
+                    <option>How many travellers will there be with you?</option>
                     <option>01</option>
                     <option>02</option>
                     <option>03</option>
