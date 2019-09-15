@@ -59,7 +59,7 @@ class brokerSearch extends Component {
         amountTravellers: this.state.amountTravellers
       })
       .then(res => {
-        // write some code here
+        console.log(res.data);
       })
   }
 
