@@ -128,4 +128,8 @@ h2.bookLabel {
 	margin-left: auto;	
 }
 
-/*book page css*/
+a.pinkthing {
+	color: black;
+	text-decoration: none;
+	display: block;
+}
