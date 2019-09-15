@@ -65,14 +65,29 @@ class brokerSearch extends Component {
               >
                 <div className="search_item">
                   <div>
-                    <strong>Destination</strong>
+                    <strong>University Destination</strong>
                   </div>
-                  <input
+                  <select
                     type="text"
                     className="destination search_input"
-                    placeholder="What is your destination?"
                     required="required"
-                  />
+                  >
+                    <option>What is your university destination?</option>
+                    <option>Brock University</option>
+                    <option>Carleton University</option>
+                    <option>McMaster University</option>
+                    <option>OCAD University</option>
+                    <option>Queen's University</option>
+                    <option>Ryerson University</option>
+                    <option>University of Guelph</option>
+                    <option>University of Ottawa</option>
+                    <option>University of Toronto</option>
+                    <option>University of Waterloo</option>
+                    <option>University of Windsor</option>
+                    <option>University of Western Ontario</option>
+                    <option>Wilfrid Laurier University</option>
+                    <option>York University</option>
+                  </select>
                 </div>
                 <div className="search_item">
                   <div>
@@ -99,7 +114,7 @@ class brokerSearch extends Component {
                     className="amountTravellers search_input"
                     required="required"
                   >
-                    <option>How many travellers will there be with you?</option>
+                    <option>How many travellers will are there?</option>
                     <option>01</option>
                     <option>02</option>
                     <option>03</option>
@@ -134,20 +149,20 @@ class brokerSearch extends Component {
                   <span />
                 </button>
               </form>
-              <div className="search_item">
-                <form>
-                  <div>
-                    <strong>Upload .CSV (student info):</strong>
-                  </div>
-                  <FileUploader
-                    storageRef={firebase.storage().ref("images")}
-                    onUploadStart={this.handleUploadStart}
-                    onUploadError={this.handleUploadError}
-                    onUploadSuccess={this.handleUploadSuccess}
-                    onProgress={this.handleProgress}
-                  />
-                </form>
-              </div>
+            </div>
+            <div className="search_item_cool">
+              <form>
+                <div>
+                  <strong>Upload .CSV (student info):</strong>
+                </div>
+                <FileUploader
+                  storageRef={firebase.storage().ref("images")}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                />
+              </form>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ class login extends Component{
 		<div id="log">
 		<header id="header" className="container">
             {/* Logo */}
-            <div id="logo">
+            <div id="logo" className="login">
               <h1>tourhub</h1>
               <span>powered by Accenture.</span>
             </div>
