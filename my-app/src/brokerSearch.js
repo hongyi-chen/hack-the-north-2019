@@ -135,22 +135,19 @@ class brokerSearch extends Component {
                 </button>
               </form>
               <div className="search_item">
-          <form>
-            <div>
-              <strong>Upload .CSV (student info):</strong>
-            </div>
-            <FileUploader
-              accept="image/*"
-              name="avatar"
-              randomizeFilename
-              storageRef={firebase.storage().ref("images")}
-              onUploadStart={this.handleUploadStart}
-              onUploadError={this.handleUploadError}
-              onUploadSuccess={this.handleUploadSuccess}
-              onProgress={this.handleProgress}
-            />
-          </form>
-        </div>
+                <form>
+                  <div>
+                    <strong>Upload .CSV (student info):</strong>
+                  </div>
+                  <FileUploader
+                    storageRef={firebase.storage().ref("images")}
+                    onUploadStart={this.handleUploadStart}
+                    onUploadError={this.handleUploadError}
+                    onUploadSuccess={this.handleUploadSuccess}
+                    onProgress={this.handleProgress}
+                  />
+                </form>
+              </div>
             </div>
           </div>
         </div>
