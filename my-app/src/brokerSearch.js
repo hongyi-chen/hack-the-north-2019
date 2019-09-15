@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./tourSearch.css";
 import "./login.css";
 import firebase from "firebase";
+import axios from "axios";  
 import FileUploader from "react-firebase-file-uploader";
 import Papa from 'papaparse';
 
@@ -98,6 +99,18 @@ class brokerSearch extends Component {
     amountTravellers: null
   };
 
+  searchTours(){
+    axios
+      .post("http://localhost:4000/searchTours",{
+        uniDestination: this.state.uniDestinations,
+        visitSeason: this.state.visitSeason,
+        amountTravellers: this.state.amountTravellers
+      })
+      .then(res => {
+        // write some code here
+      })
+  }
+
   render() {
     return (
       <div>
@@ -123,7 +136,7 @@ class brokerSearch extends Component {
                     <strong>University Destination</strong>
                   </div>
                   <select
-                    onChange={e => this.setState({ class: e.target.value })}
+                    onChange={e => this.setState({ uniDestination: e.target.value })}
                     type="text"
                     className="destination search_input"
                     required="required"
@@ -140,7 +153,9 @@ class brokerSearch extends Component {
                     <option value="toronto">University of Toronto</option>
                     <option value="waterloo">University of Waterloo</option>
                     <option value="windsor">University of Windsor</option>
-                    <option value="western">University of Western Ontario</option>
+                    <option value="western">
+                      University of Western Ontario
+                    </option>
                     <option value="laurier">Wilfrid Laurier University</option>
                     <option value="york">York University</option>
                   </select>
@@ -151,15 +166,15 @@ class brokerSearch extends Component {
                     <strong>Season of Visit</strong>
                   </div>
                   <select
-                    onChange={e => this.setState({ class: e.target.value })}
+                    onChange={e => this.setState({ visitSeason: e.target.value })}
                     type="text"
                     className="season search_input"
                     required="required"
                   >
                     <option>What season would you like to visit?</option>
-                    <option value = "fall">Fall</option>
-                    <option value = "winter">Winter</option>
-                    <option value = "spring">Spring</option>
+                    <option value="fall">Fall</option>
+                    <option value="winter">Winter</option>
+                    <option value="spring">Spring</option>
                   </select>
                 </div>
 
@@ -168,38 +183,38 @@ class brokerSearch extends Component {
                     <strong>Amount of travellers</strong>
                   </div>
                   <select
-                    onChange={e => this.setState({ class: e.target.value })}
+                    onChange={e => this.setState({ amountTravellers: e.target.value })}
                     name="travellers"
                     id="travellers_1"
                     className="amountTravellers search_input"
                     required="required"
                   >
                     <option>How many travellers are there?</option>
-                    <option value = "1">01</option>
-                    <option value = "2">02</option>
-                    <option value = "3">03</option>
-                    <option value = "4">04</option>
-                    <option value = "5">05</option>
-                    <option value = "6">06</option>
-                    <option value = "7">07</option>
-                    <option value = "8">08</option>
-                    <option value = "9">09</option>
-                    <option value = "10">10</option>
-                    <option value = "11">11</option>
-                    <option value = "12">12</option>
-                    <option value = "13">13</option>
-                    <option value = "14">14</option>
-                    <option value = "15">15</option>
-                    <option value = "16">16</option>
-                    <option value = "17">17</option>
-                    <option value = "18">18</option>
-                    <option value = "19">19</option>
-                    <option value = "20">20</option>
-                    <option value = "21">21</option>
-                    <option value = "22">22</option>
-                    <option value = "23">23</option>
-                    <option value = "24">24</option>
-                    <option value = "25">25</option>
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
                   </select>
                 </div>
                 <button className="button search_button">
