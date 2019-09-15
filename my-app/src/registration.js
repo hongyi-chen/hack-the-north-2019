@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './login.css';
 import './assets/css/main.css';
+import firebase from 'firebase';
 
 class registration extends Component{
   state = {
@@ -13,14 +14,11 @@ class registration extends Component{
   };
 
   registration = () => {
-    axios.post('http:/localhost:4000/login',{
-      username: this.state.username,
-	  password: this.state.password,
-	  firstName: this.state.firstName,
-	  lastName: this.state.lastName,
-	  email: this.state.email,
-    }).then((res)=>{
-    });
+	const userSend = this.state.username;
+    const userPass = this.state.password;
+    const auth = firebase.auth();
+    const promise = auth.createUserWithEmailAndPassword(userSend, userPass);
+    promise.catch(e => console.log(e.message));
   }
 
   render(){
@@ -34,7 +32,7 @@ class registration extends Component{
               <span>powered by Accenture.</span>
             </div>
           </header>
-			<input className="login"
+			<input className="login" 
 				type="text"
 				placeholder="First Name"
 				onChange={(e)=> this.setState.firstName=e.target.value}
@@ -64,7 +62,7 @@ class registration extends Component{
 				onChange={(e)=> this.setState.password=e.target.value}
 				style={{ width: '200px' }}
 			/>
-			<button className="login" onClick={()=>this.login()}>Register</button>
+			<button className="login" onClick={()=>this.registration()}>Register</button>
 		</div>
         <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
       </div>
