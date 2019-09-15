@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./tourSearch.css";
 import "./login.css";
 import firebase from "firebase";
+import axios from "axios";  
 import FileUploader from "react-firebase-file-uploader";
 
 const firebaseConfig = {

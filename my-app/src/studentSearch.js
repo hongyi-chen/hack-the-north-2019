@@ -17,7 +17,7 @@ class studentSearch extends Component {
         amountTravellers: this.state.amountTravellers
       })
       .then(res => {
-        // write some code here
+        //
       })
   }
 
