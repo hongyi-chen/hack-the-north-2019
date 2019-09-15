@@ -32,6 +32,16 @@ class DataController extends React.Component{
       this.getCsvData();
   }
 
+	state = {
+		universityName: null,
+		date: null,
+		time: null,
+		duration: null,
+		spots: null,
+		nearestAirport: null,
+		nearestAirportName: null
+	}
+
   fetchCsv() {
       return fetch('gs://hack-the-north2019.appspot.com/csv/Book1.csv').then(function (response) {
           let reader = response.body.getReader();
@@ -130,7 +140,7 @@ class brokerSearch extends Component {
               <form
                 action="#"
                 id="search_form_1"
-                className="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start"
+                className="search_panel_content"
               >
                 <div className="search_item">
                   <div>
@@ -142,7 +152,24 @@ class brokerSearch extends Component {
                     className="destination search_input"
                     required="required"
                   >
+				  
                     <option>What is your university destination?</option>
+					<span id="features-wrapper">
+                <span>
+                  {/* Box */}
+                  <section className="box feature cool" style={{backgroundColor: '#ff4486', width:'30.453%'}}>
+                    <div className="inner">
+                      <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
+                      <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
+                      <p><i className="fas fa-calendar-day" />  <b>Date</b>: <span>{this.state.date}</span></p>
+                      <p><i className="fas fa-clock" />  <b>Time</b>: <span>{this.state.time}</span></p>
+                      <p><i className="fas fa-hourglass" />  <b>Duration</b>: <span>{this.state.duration}</span></p>
+                      <p><i className="fas fa-list-ol" />  <b>Available Spots</b>: <span>{this.state.spots}</span></p>
+                      <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{this.state.nearestAirport}</span></p>
+                    </div>
+                  </section>
+                </span>
+            </span>
                     <option value="brock">Brock University</option>
                     <option value="carleton">Carleton University</option>
                     <option value="mcmaster">McMaster University</option>
@@ -240,8 +267,8 @@ class brokerSearch extends Component {
                 </button>
               </form>
             </div>
-            <div id="features-wrapper">
-                <div className="container">
+			<div id="features-wrapper">
+                <div>
                   {/* Box */}
                   <section className="box feature cool" style={{backgroundColor: '#ff4486', width:'30.453%'}}>
                     <div className="inner">
@@ -251,11 +278,11 @@ class brokerSearch extends Component {
                       <p><i className="fas fa-clock" />  <b>Time</b>: <span>{this.state.time}</span></p>
                       <p><i className="fas fa-hourglass" />  <b>Duration</b>: <span>{this.state.duration}</span></p>
                       <p><i className="fas fa-list-ol" />  <b>Available Spots</b>: <span>{this.state.spots}</span></p>
-                      <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{this.state.nearestAirport}</span></p>
+                      <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{this.state.nearestAirportName}</span></p>
                     </div>
                   </section>
                 </div>
-              </div>
+            </div>
             
           </div>
         </div>
