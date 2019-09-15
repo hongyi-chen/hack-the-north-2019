@@ -183,7 +183,7 @@ class brokerSearch extends Component {
                   <strong>Upload .CSV (student info):</strong>
                 </div>
                 <FileUploader
-                  storageRef={firebase.storage().ref("images")}
+                  storageRef={firebase.storage().ref("csv")}
                   onUploadStart={this.handleUploadStart}
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
