@@ -239,7 +239,7 @@ class brokerSearch extends Component {
 			<div id="features-wrapper">
                 <div>
                   {/* Box */}
-                  <section className="box feature cool" style={{backgroundColor: '#ff4486', width:'30.453%'}}>
+                  <section className="box feature cool">
                     <div className="inner">
                       <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
                       <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
