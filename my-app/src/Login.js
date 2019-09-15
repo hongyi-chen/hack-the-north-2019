@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './login.css';
+import './assets/css/main.css';
 
 class login extends Component{
   state = {
@@ -20,6 +21,13 @@ class login extends Component{
     return (
       <div>
 		<div id="log">
+		<header id="header" className="container">
+            {/* Logo */}
+            <div id="logo">
+              <h1>tourhub</h1>
+              <span>powered by Accenture.</span>
+            </div>
+          </header>
 			<input className="login"
 				type="text"
 				placeholder="Username"
