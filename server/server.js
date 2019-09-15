@@ -39,6 +39,7 @@ app.post('/tourinfo', function (req,res){
     var allTours = 'hello';
     axios.get('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/get_all_tours')
     .then((result)=>{
+		allTours;
     });
     return res.json(allTours);
 });

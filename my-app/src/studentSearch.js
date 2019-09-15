@@ -20,6 +20,15 @@ class studentSearch extends Component {
         console.log(res.data);
       })
   }
+  state = {
+		universityName: null,
+		date: null,
+		time: null,
+		duration: null,
+		spots: null,
+		nearestAirport: null,
+		nearestAirportName: null
+	}
 
   render() {
     return (
@@ -135,6 +144,22 @@ class studentSearch extends Component {
                 </button>
               </form>
             </div>
+			<div id="features-wrapper">
+                <div>
+                  {/* Box */}
+                  <section className="box feature cool" style={{backgroundColor: '#ff4486', width:'30.453%'}}>
+                    <div className="inner">
+                      <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
+                      <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
+                      <p><i className="fas fa-calendar-day" />  <b>Date</b>: <span>{this.state.date}</span></p>
+                      <p><i className="fas fa-clock" />  <b>Time</b>: <span>{this.state.time}</span></p>
+                      <p><i className="fas fa-hourglass" />  <b>Duration</b>: <span>{this.state.duration}</span></p>
+                      <p><i className="fas fa-list-ol" />  <b>Available Spots</b>: <span>{this.state.spots}</span></p>
+                      <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{this.state.nearestAirportName}</span></p>
+                    </div>
+                  </section>
+				</div>
+			  </div>
           </div>
         </div>
         );
