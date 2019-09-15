@@ -24,11 +24,18 @@ app.post('/login', function (req, res) {
   	res.send(200);
 });
 
-app.post('/book', function (req, res){
-	res.send(200);
+app.post('/tourinfo', function (req,res){
+	var allTours = 'hello';
+	axios.get('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/get_all_tours')
+	.then((result)=>{
+
+<<<<<<< HEAD
+	});
+	return res.json(allTours);
 });
 
-app.post('/tourinfo', function (req,res){c
+=======
+app.post('/tourinfo', function (req,res){
     var allTours = 'hello';
     axios.get('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/get_all_tours')
     .then((result)=>{
@@ -36,6 +43,7 @@ app.post('/tourinfo', function (req,res){c
     });
     return res.json(allTours);
 });
+>>>>>>> 233ce9d8ce6d61b6b69318c94e347e9f7dc62c07
 
 var bookFlights = (url, key, clas, date)=>{
 
@@ -65,6 +73,8 @@ app.post('/loadAirports', function (req, res){
 
 	var departureCity = req.body.departureCity;
 
+	console.log(req.body);
+
 	var drequest = unirest("GET", "https://apidojo-hipmunk-v1.p.rapidapi.com/locations/search");
 
 	drequest.query({
@@ -85,24 +95,6 @@ app.post('/loadAirports', function (req, res){
 			return res.json({airports: 'error'});
 		}
 	});
-});
-
-app.post('/searchFlights', function (req, res){
-	var departureCity = req.body.departureCity;
-	var clas = req.body.clas;
-	var uniAirport = req.body.uniAirport;
-	var date = req.body.date;
-	var people = req.body.people;
-	var dAirports, uAirports;
-
-	console.log('search flights');
-
-	res.send(200);
-
-});
-
-app.post('/hotels', function (req, res){
-	res.send(200);
 });
 
 
