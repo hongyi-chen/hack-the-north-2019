@@ -36,7 +36,7 @@ class ProfilePage extends Component {
     this.setState({ avatar: filename, progress: 100, isUploading: false });
     firebase
       .storage()
-      .ref("images")
+      .ref("csv")
       .child(filename)
       .getDownloadURL()
       .then(url => this.setState({ avatarURL: url }));
