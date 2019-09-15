@@ -133,3 +133,9 @@ a.pinkthing {
 	text-decoration: none;
 	display: block;
 }
+
+a.pinkthing:hover{
+	color: white;
+	text-decoration: none;
+	display: block;
+}
