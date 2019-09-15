@@ -12,38 +12,40 @@ app.use(cors());
 
 app.post('/signup', function (req, res){
 	axios.post('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/create_user?username'
-		+req.body.username).then((res)=>{
+		+req.body.us2ername).then((res)=>{
 			console.log(res);
 		});
 	
-	res.send(200);
+	return res.json();
 });
 
 app.post('/login', function (req, res) {
 	console.log(req.body);
-  	res.send(200);
+  	return res.json();
 });
 
-app.post('/tourinfo', function (req,res){
-	var allTours = 'hello';
+app.post('/searchTours', function (req,res){
+	var uniDestination = req.body.uniDestination;
+	var visitSeason = req.body.visitSeason;
+	var amountTravellers = req.body.amountTravellers;
+	console.log(req.body);
+
 	axios.get('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/get_all_tours')
 	.then((result)=>{
-
-<<<<<<< HEAD
+		result = result.data;
+		var matches = [];
+		console.log(result.length);
+		for(var k = 0; k<20; k++){
+			var tour = result[k];
+			console.log(tour);
+			if(tour.UniversityName==uniDestination && tour.Season==visitSeason && tour.Size>=amountTravellers){
+				matches.push(result[k]);
+			}
+		}
+		return res.json(matches);
 	});
-	return res.json(allTours);
 });
 
-=======
-app.post('/tourinfo', function (req,res){
-    var allTours = 'hello';
-    axios.get('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/get_all_tours')
-    .then((result)=>{
-		allTours;
-    });
-    return res.json(allTours);
-});
->>>>>>> 233ce9d8ce6d61b6b69318c94e347e9f7dc62c07
 
 var bookFlights = (url, key, clas, date)=>{
 
@@ -69,6 +71,7 @@ var bookFlights = (url, key, clas, date)=>{
 	});
 }
 
+>>>>>>> f6e968b096c8183090d304be42706f38a44d1ad6
 app.post('/loadAirports', function (req, res){
 
 	var departureCity = req.body.departureCity;

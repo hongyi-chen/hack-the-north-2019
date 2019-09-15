@@ -20,12 +20,6 @@ firebase.initializeApp(firebaseConfig);
 class DataController extends React.Component{
   constructor(props) {
     super(props);
-
-    this.state = {
-        data: []
-    };
-
-    this.getData = this.getData.bind(this);
   }
 
   componentWillMount() {
@@ -55,6 +49,7 @@ class DataController extends React.Component{
 
   getData(result) {
       this.setState({data: result.data});
+      console.log("data",this.state.data);
   }
 /*
   async getCsvData() {
@@ -74,33 +69,6 @@ class DataController extends React.Component{
   }
 } 
 
-class ProfilePage extends Component {
-  state = {
-    username: null,
-    avatar: null,
-    isUploading: false,
-    progress: 0,
-    avatarURL: null
-  };
-
-  handleChangeUsername = event =>
-    this.setState({ username: event.target.value });
-  handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
-  handleProgress = progress => this.setState({ progress });
-  handleUploadError = error => {
-    this.setState({ isUploading: false });
-    console.error(error);
-  };
-  handleUploadSuccess = filename => {
-    this.setState({ avatar: filename, progress: 100, isUploading: false });
-    firebase
-      .storage()
-      .ref("csv")
-      .child(filename)
-      .getDownloadURL()
-      .then(url => this.setState({ avatarURL: url }));
-  };
-}
 
 class brokerSearch extends Component {
   state = {
@@ -110,6 +78,7 @@ class brokerSearch extends Component {
   };
 
   searchTours(){
+    console.log(this.state);
     axios
       .post("http://localhost:4000/searchTours",{
         uniDestination: this.state.uniDestinations,
@@ -259,7 +228,7 @@ class brokerSearch extends Component {
                 />
               </form>
             </div>
-                <button className="button search_button">
+                <button onClick={()=> this.searchTours()} className="button search_button">
                   search
                   <span />
                   <span />
