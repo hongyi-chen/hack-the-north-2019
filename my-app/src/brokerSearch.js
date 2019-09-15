@@ -134,7 +134,8 @@ class brokerSearch extends Component {
                   <span />
                 </button>
               </form>
-              <div className="search_item">
+            </div>
+            <div className="search_item_cool">
                 <form>
                   <div>
                     <strong>Upload .CSV (student info):</strong>
@@ -148,7 +149,6 @@ class brokerSearch extends Component {
                   />
                 </form>
               </div>
-            </div>
           </div>
         </div>
       </div>
