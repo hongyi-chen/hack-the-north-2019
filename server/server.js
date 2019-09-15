@@ -28,7 +28,13 @@ app.post('/book', function (req, res){
 	res.send(200);
 });
 
-
+app.post('/tourinfo', function (req,res){
+    var allTours = 'hello';
+    axios.get('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/get_all_tours')
+    .then((result)=>{
+    });
+    return res.json(allTours);
+});
 
 var bookFlights = (url, key, clas, date)=>{
 
@@ -97,8 +103,6 @@ app.post('/searchFlights', function (req, res){
 app.post('/hotels', function (req, res){
 	res.send(200);
 });
-
-
 
 
 const port = process.env.API_PORT || 4000;
