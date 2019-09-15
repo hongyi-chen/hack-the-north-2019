@@ -178,19 +178,6 @@ class book extends Component {
         />
 
         <button onClick={()=>this.searchFlights()}>Search Hotels</button>
-
-        <select>{this.state.originAirports.map(MakeItem)}</select>
-
-        <select onChange={e => this.setState({ class: e.target.value })}>
-          <option value="e">Economy</option>
-          <option value="p">Premium Economy</option>
-          <option value="b">Business</option>
-          <option value="f">First Class</option>
-        </select>
-        <button onClick={() => this.searchFlights()}>Search</button>
-        <hr></hr>
-
-        <h2>Hotels</h2>
       </div>
     );
   }
