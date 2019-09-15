@@ -34,12 +34,13 @@ class home extends Component {
           <header id="header" className="container">
             {/* Logo */}
             <div id="logo">
-              <h1>tourhub</h1>
+              <h1><a href ="/">tourhub</a></h1>
               <span>powered by Accenture.</span>
             </div>
             {/* Nav */}
             <nav id="nav">
               <ul>
+				<li className="current"><a href = "ontario-unis">Ontario Universities</a></li>
                 <li className="current"><a href = "login">Log In</a></li>
               </ul>
             </nav>

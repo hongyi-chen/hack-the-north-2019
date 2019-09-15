@@ -46,6 +46,32 @@ app.post('/searchTours', function (req,res){
 	});
 });
 
+
+var bookFlights = (url, key, clas, date)=>{
+
+	var req = unirest("GET", "https://apidojo-hipmunk-v1.p.rapidapi.com/flights/book");
+
+	req.query({
+		"cabin": clas,
+		"booking_url": url,
+		"itin": key,
+		"date0": date,
+	});
+
+	req.headers({
+		"x-rapidapi-host": "apidojo-hipmunk-v1.p.rapidapi.com",
+		"x-rapidapi-key": "e600a8145cmsh66979272cf4564cp151f8bjsne7364342f99b"
+	});
+
+
+	req.end(function (res) {
+		if (res.error) throw new Error(res.error);
+
+		console.log(res.body);
+	});
+}
+
+>>>>>>> f6e968b096c8183090d304be42706f38a44d1ad6
 app.post('/loadAirports', function (req, res){
 
 	var departureCity = req.body.departureCity;
