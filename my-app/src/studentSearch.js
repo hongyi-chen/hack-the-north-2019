@@ -1,20 +1,7 @@
 import React, {Component} from 'react';
-import './tour-search.css';
+import './tourSearch.css';
 
-class home extends Component {
-
-    state = {
-      isStudent: false,
-      isBroker: false
-    }
-  
-    student(){
-      this.setState({isStudent: true});
-    }
-  
-    broker(){
-      this.setState({isBroker: true});
-    }
+class tourSearch extends Component {
   
     render() {
       if(this.state.isStudent){
@@ -68,4 +55,4 @@ class home extends Component {
     }
   }
   
-  export default tour-search;
+  export default tourSearch;

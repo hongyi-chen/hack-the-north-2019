@@ -4,7 +4,7 @@ import login from './login.js';
 import home from './home.js';
 import book from './book.js';
 import registration from './registration.js';
-import tourSearch from './tour-search.js';
+import tourSearch from './tourSearch.js';
 
 class App extends Component{
   render(){
