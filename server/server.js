@@ -35,8 +35,8 @@ app.post('/searchTours', function (req,res){
 		var matches = [];
 		for(var k of result){
 			var tour = k;
-			if(tour.UniversityName==uniDestination && tour.Season==visitSeason){
 				//if()
+			if(tour.UniversityName==uniDestination && tour.Season==visitSeason){
 				matches.push(tour);
 			}
     	}
