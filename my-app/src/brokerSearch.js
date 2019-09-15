@@ -215,6 +215,10 @@ class brokerSearch extends Component {
     this.setState({show:true});
   }
 
+  book(){
+    
+  }
+
   render() {
     var boxes = [];
     if(this.state.show){
@@ -338,8 +342,24 @@ class brokerSearch extends Component {
                   <span />
                 </button>
               </form>
-              
+
+              <div className="search_item_cool">
+                <form>
+                <div className="search_item_cool2">
+                  <strong>Upload .CSV (student info):</strong>
+                </div>
+                <FileUploader
+                  storageRef={firebase.storage().ref("csv")}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                />
+              </form>
+            </div>
+                <a onClick={()=> this.book()}>
               {boxes}
+              </a>
             </div>
           </div>
         </div>
