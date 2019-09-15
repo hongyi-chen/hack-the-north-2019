@@ -2,16 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class book extends Component {
-  state = {
-    uni: "brock university",
-    date: "oct 29 2019",
-    departureCity: null,
-    class: null,
-    flightData: null,
-    people: 5,
-    nearestAirport: "YYZ",
-    originAirports: []
-  };
 
     state = {
         uni: "brock university",
@@ -27,10 +17,12 @@ class book extends Component {
 
     constructor(props) {
         super(props);
+        /*
         this.setState({uni: this.props.location.data.uni});
         this.setState({date: this.props.location.data.date});
         this.setState({people: this.props.location.data.people});
         this.setState({nearestAirport: this.props.location.data.nearestAirport});
+        */
     }
 
     searchFlights(){
@@ -116,8 +108,6 @@ class book extends Component {
         });
 
     }
-    
-    render(){
 
   searchFlights() {
     axios
@@ -162,6 +152,7 @@ class book extends Component {
           onChange={e => (this.state.departureCity = e.target.value)}
           style={{ width: "200px" }}
         />
+        <button onClick={() => this.loadAirports(city)}>Confirm City</button>
 
         <select onChange={(e)=>this.setState({departureAirport:e.target.value})}>
             {this.state.originAirports.map(MakeItem)}
@@ -187,7 +178,6 @@ class book extends Component {
         />
 
         <button onClick={()=>this.searchFlights()}>Search Hotels</button>
-        <button onClick={() => this.loadAirports(city)}>Confirm City</button>
 
         <select>{this.state.originAirports.map(MakeItem)}</select>
 
