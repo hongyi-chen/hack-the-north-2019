@@ -217,17 +217,8 @@ class brokerSearch extends Component {
                     <option value="25">25</option>
                   </select>
                 </div>
-                <button className="button search_button">
-                  search
-                  <span />
-                  <span />
-                  <span />
-                </button>
-              </form>
-            </div>
-
-            <div className="search_item_cool">
-              <form>
+                <div className="search_item_cool">
+                <form>
                 <div>
                   <strong>Upload .CSV (student info):</strong>
                 </div>
@@ -240,6 +231,16 @@ class brokerSearch extends Component {
                 />
               </form>
             </div>
+                <button className="button search_button">
+                  search
+                  <span />
+                  <span />
+                  <span />
+                </button>
+              </form>
+            </div>
+
+           
           </div>
         </div>
       </div>
