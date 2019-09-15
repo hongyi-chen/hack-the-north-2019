@@ -35,31 +35,31 @@ class registration extends Component{
 			<input className="login" 
 				type="text"
 				placeholder="First Name"
-				onChange={(e)=> this.setState.firstName=e.target.value}
+				onChange={(e)=> this.setState({firstName: e.target.value})}
 				style={{ width: '200px' }}
 			  />
 			  <input className="login"
 				type="text"
 				placeholder="Last Name"
-				onChange={(e)=> this.setState.lastName=e.target.value}
+				onChange={(e)=> this.setState({lastName: e.target.value})}
 				style={{ width: '200px' }}
 			  />
 			<input className="login"
 				type="text"
 				placeholder="Email"
-				onChange={(e)=> this.setState.email=e.target.value}
+				onChange={(e)=> this.setState({email: e.target.value})}
 				style={{ width: '200px' }}
 			  />
 			<input className="login"
 				type="text"
 				placeholder="Username"
-				onChange={(e)=> this.setState.username=e.target.value}
+				onChange={(e)=> this.setState({username: e.target.value})}
 				style={{ width: '200px' }}
 			  />
 			<input className="login"
 				type="text"
 				placeholder="Password"
-				onChange={(e)=> this.setState.password=e.target.value}
+				onChange={(e)=> this.setState({password: e.target.value})}
 				style={{ width: '200px' }}
 			/>
 			<button className="login" onClick={()=>this.registration()}>Register</button>
