@@ -13,7 +13,7 @@ const firebaseConfig = {
   messagingSenderId: "683328898630",
   appId: "1:683328898630:web:42481d6cc2ff9ffd722c47"
 };
-//firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 class ProfilePage extends Component {
   state = {
