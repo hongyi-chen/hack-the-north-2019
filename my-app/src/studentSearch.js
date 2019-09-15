@@ -1,12 +1,10 @@
-import React, {Component} from 'react';
-import './tourSearch.css';
+import React, { Component } from "react";
+import "./tourSearch.css";
 
 class studentSearch extends Component {
-  
-    render() {
-  
-      return (
-        <div>
+  render() {
+    return (
+      <div>
         <header id="header" className="container">
           {/* Logo */}
           <div id="logo">
@@ -25,16 +23,35 @@ class studentSearch extends Component {
                 className="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start"
               >
                 <div className="search_item">
-                  <div><strong>Destination</strong></div>
-                  <input
+                  <div>
+                    <strong>University Destination</strong>
+                  </div>
+                  <select
                     type="text"
                     className="destination search_input"
-                    placeholder="What is your destination?"
                     required="required"
-                  />
+                  >
+                    <option>What is your university destination?</option>
+                    <option>Brock University</option>
+                    <option>Carleton University</option>
+                    <option>McMaster University</option>
+                    <option>OCAD University</option>
+                    <option>Queen's University</option>
+                    <option>Ryerson University</option>
+                    <option>University of Guelph</option>
+                    <option>University of Ottawa</option>
+                    <option>University of Toronto</option>
+                    <option>University of Waterloo</option>
+                    <option>University of Windsor</option>
+                    <option>University of Western Ontario</option>
+                    <option>Wilfrid Laurier University</option>
+                    <option>York University</option>
+                  </select>
                 </div>
                 <div className="search_item">
-                  <div><strong>Season of Visit</strong></div>
+                  <div>
+                    <strong>Season of Visit</strong>
+                  </div>
                   <select
                     type="text"
                     className="season search_input"
@@ -44,17 +61,19 @@ class studentSearch extends Component {
                     <option>Fall</option>
                     <option>Winter</option>
                     <option>Spring</option>
-                      </select>
+                  </select>
                 </div>
                 <div className="search_item">
-                  <div><strong>Amount of travellers</strong></div>
+                  <div>
+                    <strong>Amount of travellers</strong>
+                  </div>
                   <select
                     name="travellers"
                     id="travellers_1"
                     className="amountTravellers search_input"
                     required="required"
                   >
-                    <option>How many travellers will there be with you?</option>
+                    <option>How many travellers are there?</option>
                     <option>01</option>
                     <option>02</option>
                     <option>03</option>
@@ -94,8 +113,8 @@ class studentSearch extends Component {
         </div>
         );
       </div>
-      );
-    }
+    );
   }
-  
-  export default studentSearch;
+}
+
+export default studentSearch;

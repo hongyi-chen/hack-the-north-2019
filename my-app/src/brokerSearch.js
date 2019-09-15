@@ -65,14 +65,29 @@ class brokerSearch extends Component {
               >
                 <div className="search_item">
                   <div>
-                    <strong>Destination</strong>
+                    <strong>University Destination</strong>
                   </div>
-                  <input
+                  <select
                     type="text"
                     className="destination search_input"
-                    placeholder="What is your destination?"
                     required="required"
-                  />
+                  >
+                    <option>What is your university destination?</option>
+                    <option>Brock University</option>
+                    <option>Carleton University</option>
+                    <option>McMaster University</option>
+                    <option>OCAD University</option>
+                    <option>Queen's University</option>
+                    <option>Ryerson University</option>
+                    <option>University of Guelph</option>
+                    <option>University of Ottawa</option>
+                    <option>University of Toronto</option>
+                    <option>University of Waterloo</option>
+                    <option>University of Windsor</option>
+                    <option>University of Western Ontario</option>
+                    <option>Wilfrid Laurier University</option>
+                    <option>York University</option>
+                  </select>
                 </div>
                 <div className="search_item">
                   <div>
@@ -136,19 +151,19 @@ class brokerSearch extends Component {
               </form>
             </div>
             <div className="search_item_cool">
-                <form>
-                  <div>
-                    <strong>Upload .CSV (student info):</strong>
-                  </div>
-                  <FileUploader
-                    storageRef={firebase.storage().ref("images")}
-                    onUploadStart={this.handleUploadStart}
-                    onUploadError={this.handleUploadError}
-                    onUploadSuccess={this.handleUploadSuccess}
-                    onProgress={this.handleProgress}
-                  />
-                </form>
-              </div>
+              <form>
+                <div>
+                  <strong>Upload .CSV (student info):</strong>
+                </div>
+                <FileUploader
+                  storageRef={firebase.storage().ref("images")}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                />
+              </form>
+            </div>
           </div>
         </div>
       </div>
