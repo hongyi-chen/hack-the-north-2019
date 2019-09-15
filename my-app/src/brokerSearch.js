@@ -139,7 +139,7 @@ class brokerSearch extends Component {
           <label>Username:</label>
           <input
             type="text"
-            value={this.state.username}
+            value={this.setState.username}
             name="username"
             onChange={this.handleChangeUsername}
           />

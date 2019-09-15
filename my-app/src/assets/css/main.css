@@ -1902,7 +1902,7 @@ input, select, textarea {
 /* Wrappers */
 
 	#header-wrapper {
-		padding: 4.5em 0 3em 0;
+		padding: 1em 0 1em 0;
 	}
 
 	#features-wrapper {
@@ -1946,7 +1946,7 @@ input, select, textarea {
 
 		#logo span {
 			font-weight: 800;
-			line-height: 2em;
+			line-height: 1em;
 			letter-spacing: 0.025em;
 			font-size: 1.5em;
 			vertical-align: middle;
@@ -1969,7 +1969,7 @@ input, select, textarea {
 
 			#nav ul li {
 				float: left;
-				line-height: 4.5em;
+				line-height: 10em;
 				padding-left: 1.5em;
 			}
 
