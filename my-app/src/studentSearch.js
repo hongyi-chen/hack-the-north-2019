@@ -8,7 +8,6 @@ class studentSearch extends Component {
   constructor(props) {
         super(props);
     }
-
   componentDidMount() {
     if(!this.props.location.data){
       console.log('didnt get email');
@@ -28,7 +27,18 @@ class studentSearch extends Component {
     spots: null,
     nearestAirport: null,
     nearestAirportName: null,
-    showTours: []
+    showTours: [{
+        "ID": 45,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "24-Oct-19",
+        "Time": "13:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    }]
   };
 
   searchTours(){
@@ -44,8 +54,7 @@ class studentSearch extends Component {
       .then(res => {
         var tours = res.data;
         console.log(res.data);
-        this.states.showTours = tours;
-        //this.setState({showTours:tours});
+        this.setState({showTours:tours});
         console.log(this.state.showTours);
       })
   }
@@ -53,6 +62,7 @@ class studentSearch extends Component {
   render() {
 
     var boxes = [];
+    console.log(boxes);
 
     for(var js of this.state.showTours){
       console.log(js);

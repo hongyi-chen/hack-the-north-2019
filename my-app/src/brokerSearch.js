@@ -4,6 +4,7 @@ import "./login.css";
 import firebase from "firebase";
 import axios from "axios";  
 import FileUploader from "react-firebase-file-uploader";
+import Tour from "./tour";
 //import Papa from 'papaparse';
 
 const firebaseConfig = {
@@ -33,7 +34,7 @@ class DataController extends React.Component{
 		duration: null,
 		spots: null,
 		nearestAirport: null,
-		nearestAirportName: null
+		nearestAirportName: null,
 	}
 
   fetchCsv() {
@@ -87,7 +88,116 @@ class brokerSearch extends Component {
   state = {
     uniDestination: null,
     visitSeason: null,
-    amountTravellers: null
+    amountTravellers: null,
+    show: false,
+    showTours: [{
+        "ID": 37,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "16-Oct-19",
+        "Time": "9:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    },
+    {
+        "ID": 38,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "16-Oct-19",
+        "Time": "11:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    },
+    {
+        "ID": 39,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "16-Oct-19",
+        "Time": "13:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    },
+    {
+        "ID": 40,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "17-Oct-19",
+        "Time": "9:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    },
+    {
+        "ID": 41,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "17-Oct-19",
+        "Time": "11:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    },
+    {
+        "ID": 42,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "17-Oct-19",
+        "Time": "13:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    },
+    {
+        "ID": 43,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "24-Oct-19",
+        "Time": "9:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    },
+    {
+        "ID": 44,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "24-Oct-19",
+        "Time": "11:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    },
+    {
+        "ID": 45,
+        "UniversityName": "Ryerson University",
+        "Season": "Fall",
+        "Date": "24-Oct-19",
+        "Time": "13:00",
+        "Duration": 1.5,
+        "Size": 30,
+        "AvailableSpots": 30,
+        "NearestAirport": "YYZ",
+        "AirportCity": "Toronto"
+    }]
   };
 
   searchTours(){
@@ -101,19 +211,30 @@ class brokerSearch extends Component {
       .then(res => {
         console.log(res.data);
       })
+
+    this.setState({show:true});
   }
 
   render() {
+    var boxes = [];
+    if(this.state.show){
+      console.log(boxes);
+
+      for(var js of this.state.showTours){
+        console.log(js);
+        boxes.push(<Tour data={js} />);
+      }
+    }
+
     return (
       <div>
         <header id="header" className="container">
           {/* Logo */}
           <div id="logo">
-            <h1><a href="/">tourhub</a></h1>
+          <h1><a href="/">tourhub</a></h1>
             <span>powered by Accenture.</span>
           </div>
         </header>
-
         <div className="search">
           {/* Search Contents */}
           <div className="container fill_height">
@@ -122,7 +243,7 @@ class brokerSearch extends Component {
               <form
                 action="#"
                 id="search_form_1"
-                className="search_panel_content"
+                className="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start"
               >
                 <div className="search_item">
                   <div>
@@ -134,40 +255,23 @@ class brokerSearch extends Component {
                     className="destination search_input"
                     required="required"
                   >
-				  
                     <option>What is your university destination?</option>
-					<span id="features-wrapper">
-                <span>
-                  {/* Box */}
-                  <section className="box feature cool" style={{backgroundColor: '#ff4486', width:'30.453%'}}>
-                    <div className="inner">
-                      <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
-                      <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
-                      <p><i className="fas fa-calendar-day" />  <b>Date</b>: <span>{this.state.date}</span></p>
-                      <p><i className="fas fa-clock" />  <b>Time</b>: <span>{this.state.time}</span></p>
-                      <p><i className="fas fa-hourglass" />  <b>Duration</b>: <span>{this.state.duration}</span></p>
-                      <p><i className="fas fa-list-ol" />  <b>Available Spots</b>: <span>{this.state.spots}</span></p>
-                      <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{this.state.nearestAirport}</span></p>
-                    </div>
-                  </section>
-                </span>
-            </span>
-                    <option value="brock">Brock University</option>
-                    <option value="carleton">Carleton University</option>
-                    <option value="mcmaster">McMaster University</option>
-                    <option value="ocad">OCAD University</option>
-                    <option value="queens">Queen's University</option>
-                    <option value="ryerson">Ryerson University</option>
-                    <option value="guelph">University of Guelph</option>
-                    <option value="ottawa">University of Ottawa</option>
-                    <option value="toronto">University of Toronto</option>
-                    <option value="waterloo">University of Waterloo</option>
-                    <option value="windsor">University of Windsor</option>
-                    <option value="western">
+                    <option value="Brock University">Brock University</option>
+                    <option value="Carleton University">Carleton University</option>
+                    <option value="McMaster University">McMaster University</option>
+                    <option value="OCAD University">OCAD University</option>
+                    <option value="Queen's University">Queen's University</option>
+                    <option value="Ryerson University">Ryerson University</option>
+                    <option value="University of Guelph">University of Guelph</option>
+                    <option value="University of Ottawa">University of Ottawa</option>
+                    <option value="University of Toronto">University of Toronto</option>
+                    <option value="University of Waterloo">University of Waterloo</option>
+                    <option value="University of Windsor">University of Windsor</option>
+                    <option value="University of Western Ontario">
                       University of Western Ontario
                     </option>
-                    <option value="laurier">Wilfrid Laurier University</option>
-                    <option value="york">York University</option>
+                    <option value="Wilfrid Laurier University">Wilfrid Laurier University</option>
+                    <option value="York University">York University</option>
                   </select>
                 </div>
 
@@ -182,9 +286,9 @@ class brokerSearch extends Component {
                     required="required"
                   >
                     <option>What season would you like to visit?</option>
-                    <option value="fall">Fall</option>
-                    <option value="winter">Winter</option>
-                    <option value="spring">Spring</option>
+                    <option value="Fall">Fall</option>
+                    <option value="Winter">Winter</option>
+                    <option value="Spring">Spring</option>
                   </select>
                 </div>
 
@@ -227,50 +331,21 @@ class brokerSearch extends Component {
                     <option value="25">25</option>
                   </select>
                 </div>
-                <div className="search_item_cool">
-                <form>
-                <div className="search_item_cool2">
-                  <strong>Upload .CSV (student info):</strong>
-                </div>
-                <FileUploader
-                  storageRef={firebase.storage().ref("csv")}
-                  onUploadStart={this.handleUploadStart}
-                  onUploadError={this.handleUploadError}
-                  onUploadSuccess={this.handleUploadSuccess}
-                  onProgress={this.handleProgress}
-                />
-              </form>
-            </div>
-                <button onClick={()=> this.searchTours()} className="button search_button">
-                  search
+                <button onClick={()=> this.searchTours()}>
+                  Search
                   <span />
                   <span />
                   <span />
                 </button>
               </form>
+              
+              {boxes}
             </div>
-			<div id="features-wrapper">
-                <div>
-                  {/* Box */}
-                  <section className="box feature cool" style={{backgroundColor: '#ff4486', width:'30.453%'}}>
-                    <div className="inner">
-                      <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
-                      <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
-                      <p><i className="fas fa-calendar-day" />  <b>Date</b>: <span>{this.state.date}</span></p>
-                      <p><i className="fas fa-clock" />  <b>Time</b>: <span>{this.state.time}</span></p>
-                      <p><i className="fas fa-hourglass" />  <b>Duration</b>: <span>{this.state.duration}</span></p>
-                      <p><i className="fas fa-list-ol" />  <b>Available Spots</b>: <span>{this.state.spots}</span></p>
-                      <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{this.state.nearestAirportName}</span></p>
-                    </div>
-                  </section>
-                </div>
-            </div>
-            
           </div>
         </div>
+        );
       </div>
     );
   }
 }
-
 export default brokerSearch;

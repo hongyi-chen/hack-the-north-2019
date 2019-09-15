@@ -21,6 +21,7 @@ class registration extends Component{
 
   state = {
 	password: null,
+	personalStatus: null,
 	firstName: null,
 	lastName: null,
 	email: null,
@@ -34,6 +35,10 @@ class registration extends Component{
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(userSend, userPass);
     promise.catch(e => console.log(e.message));
+
+
+    if(this.state.personalStatus=='student') this.setState({toStudent: true});
+    else this.setState({toBroker: true});
 
   }
 
@@ -80,7 +85,6 @@ class registration extends Component{
 			/>
 			<button className="login" onClick={()=>this.registration()}>Register</button>
 		</div>
-        <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
       </div>
     );
   }
