@@ -3,7 +3,7 @@ import "./tourSearch.css";
 import "./login.css";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
- 
+
 const firebaseConfig = {
   apiKey: "AIzaSyC08FLEjf003pV-j9t9pYHs2eu_MahFqfs",
   authDomain: "hack-the-north2019.firebaseapp.com",
@@ -42,9 +42,6 @@ class ProfilePage extends Component {
   };
 }
 
-
-
-
 class brokerSearch extends Component {
   render() {
     return (
@@ -67,16 +64,35 @@ class brokerSearch extends Component {
                 className="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start"
               >
                 <div className="search_item">
-                  <div><strong>Destination</strong></div>
-                  <input
+                  <div>
+                    <strong>University Destination</strong>
+                  </div>
+                  <select
                     type="text"
                     className="destination search_input"
-                    placeholder="What is your destination?"
                     required="required"
-                  />
+                  >
+                    <option>What is your university destination?</option>
+                    <option>Brock University</option>
+                    <option>Carleton University</option>
+                    <option>McMaster University</option>
+                    <option>OCAD University</option>
+                    <option>Queen's University</option>
+                    <option>Ryerson University</option>
+                    <option>University of Guelph</option>
+                    <option>University of Ottawa</option>
+                    <option>University of Toronto</option>
+                    <option>University of Waterloo</option>
+                    <option>University of Windsor</option>
+                    <option>University of Western Ontario</option>
+                    <option>Wilfrid Laurier University</option>
+                    <option>York University</option>
+                  </select>
                 </div>
                 <div className="search_item">
-                  <div><strong>Season of Visit</strong></div>
+                  <div>
+                    <strong>Season of Visit</strong>
+                  </div>
                   <select
                     type="text"
                     className="season search_input"
@@ -86,17 +102,19 @@ class brokerSearch extends Component {
                     <option>Fall</option>
                     <option>Winter</option>
                     <option>Spring</option>
-                      </select>
+                  </select>
                 </div>
                 <div className="search_item">
-                  <div><strong>Amount of travellers</strong></div>
+                  <div>
+                    <strong>Amount of travellers</strong>
+                  </div>
                   <select
                     name="travellers"
                     id="travellers_1"
                     className="amountTravellers search_input"
                     required="required"
                   >
-                    <option>How many travellers will there be with you?</option>
+                    <option>How many travellers will are there?</option>
                     <option>01</option>
                     <option>02</option>
                     <option>03</option>
@@ -132,32 +150,22 @@ class brokerSearch extends Component {
                 </button>
               </form>
             </div>
+            <div className="search_item_cool">
+              <form>
+                <div>
+                  <strong>Upload .CSV (student info):</strong>
+                </div>
+                <FileUploader
+                  storageRef={firebase.storage().ref("images")}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                />
+              </form>
+            </div>
           </div>
         </div>
-        <div id = "file upload">
-        <form>
-          <label>Username:</label>
-          <input
-            type="text"
-            value={this.setState.username}
-            name="username"
-            onChange={this.handleChangeUsername}
-          />
-          <label>Avatar:</label>
-          {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
-          {this.state.avatarURL && <img src={this.state.avatarURL} />}
-          <FileUploader
-            accept="image/*"
-            name="avatar"
-            randomizeFilename
-            storageRef={firebase.storage().ref("images")}
-            onUploadStart={this.handleUploadStart}
-            onUploadError={this.handleUploadError}
-            onUploadSuccess={this.handleUploadSuccess}
-            onProgress={this.handleProgress}
-          />
-        </form>
-      </div>
       </div>
     );
   }
