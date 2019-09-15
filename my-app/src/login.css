@@ -6,8 +6,9 @@
 .login {
 	display: block;
 	margin-right: auto;
-	margin: 20px;
 	margin-left: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 input {
