@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {BrowserRoouter as Router, Route, Link, Redirect} from "react-router-dom";
 import "./tourSearch.css";
 import "./login.css";
 import firebase from "firebase";
@@ -90,6 +91,7 @@ class brokerSearch extends Component {
     visitSeason: null,
     amountTravellers: null,
     show: false,
+    toBook: false,
     showTours: [{
         "ID": 37,
         "UniversityName": "Ryerson University",
@@ -216,10 +218,13 @@ class brokerSearch extends Component {
   }
 
   book(){
-    
+
   }
 
   render() {
+    if(this.state.toBook){
+      return <Redirect to={{pathname: "/book", data: {email:this.state.email} }} />
+    }
     var boxes = [];
     if(this.state.show){
       console.log(boxes);
@@ -357,7 +362,7 @@ class brokerSearch extends Component {
                 />
               </form>
             </div>
-                <a onClick={()=> this.book()}>
+                <a onClick={()=> this.setState({toBook: true})}>
               {boxes}
               </a>
             </div>
