@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import axios from 'axios';
 import './login.css';
 import './assets/css/main.css';
@@ -20,40 +19,22 @@ class registration extends Component{
   }
 
   state = {
-    email: null,
+    username: null,
 	password: null,
 	firstName: null,
 	lastName: null,
-	personStatus: null,
-	toBroker: false,
-	toStudent: false
+	email: null
   };
 
   registration = () => {
-  	console.log('registration');
-	const userSend = this.state.email;
+	const userSend = this.state.username;
     const userPass = this.state.password;
-    console.log(userSend, userPass);
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(userSend, userPass);
     promise.catch(e => console.log(e.message));
-
-    if(this.state.personStatus=="broker"){
-    	this.setState({toBroker: true});
-    }else{
-    	this.setState({toStudent: true});
-    }
   }
 
   render(){
-
-  	if (this.state.toBroker === true) {
-  		return <Redirect to={{pathname: "/brokerSearch", data: {email:this.state.email} }} />
-	}
-	if (this.state.toStudent === true) {
-  		return <Redirect to={{pathname: "/studentSearch", data: {email:this.state.email} }} />
-	}
-
     return (
       <div>
 		<div id="log">
@@ -80,6 +61,12 @@ class registration extends Component{
 				type="text"
 				placeholder="Email"
 				onChange={(e)=> this.setState({email: e.target.value})}
+				style={{ width: '200px' }}
+			  />
+			<input className="login"
+				type="text"
+				placeholder="Username"
+				onChange={(e)=> this.setState({username: e.target.value})}
 				style={{ width: '200px' }}
 			  />
 			<input className="login"

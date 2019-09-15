@@ -72,6 +72,7 @@ var bookFlights = (url, key, clas, date)=>{
 	});
 }
 
+>>>>>>> f6e968b096c8183090d304be42706f38a44d1ad6
 app.post('/loadAirports', function (req, res){
 
 	var departureCity = req.body.departureCity;

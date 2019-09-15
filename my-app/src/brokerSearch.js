@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import "./tourSearch.css";
 import "./login.css";
 import firebase from "firebase";
@@ -88,8 +87,7 @@ class brokerSearch extends Component {
   state = {
     uniDestination: null,
     visitSeason: null,
-    amountTravellers: null,
-    email: null
+    amountTravellers: null
   };
 
   searchTours(){
@@ -254,7 +252,7 @@ class brokerSearch extends Component {
 			<div id="features-wrapper">
                 <div>
                   {/* Box */}
-                  <section className="box feature cool">
+                  <section className="box feature cool" style={{backgroundColor: '#ff4486', width:'30.453%'}}>
                     <div className="inner">
                       <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
                       <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import "./tourSearch.css";
 import axios from "axios";
 import Tour from './tour';
@@ -19,7 +18,6 @@ class studentSearch extends Component {
   }
 
   state = {
-    email: null,
     uniDestination: null,
     visitSeason: null,
     amountTravellers: null,
