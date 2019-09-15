@@ -21,13 +21,9 @@ class ProfilePage extends Component {
     avatar: null,
     isUploading: false,
     progress: 0,
-    avatarURL: null,
-
-    uniDestination:null,
-    visitSeason:null,
-    amountTravellers:null,
-
+    avatarURL: null
   };
+
   handleChangeUsername = event =>
     this.setState({ username: event.target.value });
   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
@@ -48,6 +44,12 @@ class ProfilePage extends Component {
 }
 
 class brokerSearch extends Component {
+  state = {
+    uniDestination: null,
+    visitSeason: null,
+    amountTravellers: null
+  };
+
   render() {
     return (
       <div>
@@ -73,78 +75,83 @@ class brokerSearch extends Component {
                     <strong>University Destination</strong>
                   </div>
                   <select
+                    onChange={e => this.setState({ class: e.target.value })}
                     type="text"
                     className="destination search_input"
                     required="required"
                   >
                     <option>What is your university destination?</option>
-                    <option>Brock University</option>
-                    <option>Carleton University</option>
-                    <option>McMaster University</option>
-                    <option>OCAD University</option>
-                    <option>Queen's University</option>
-                    <option>Ryerson University</option>
-                    <option>University of Guelph</option>
-                    <option>University of Ottawa</option>
-                    <option>University of Toronto</option>
-                    <option>University of Waterloo</option>
-                    <option>University of Windsor</option>
-                    <option>University of Western Ontario</option>
-                    <option>Wilfrid Laurier University</option>
-                    <option>York University</option>
+                    <option value="brock">Brock University</option>
+                    <option value="carleton">Carleton University</option>
+                    <option value="mcmaster">McMaster University</option>
+                    <option value="ocad">OCAD University</option>
+                    <option value="queens">Queen's University</option>
+                    <option value="ryerson">Ryerson University</option>
+                    <option value="guelph">University of Guelph</option>
+                    <option value="ottawa">University of Ottawa</option>
+                    <option value="toronto">University of Toronto</option>
+                    <option value="waterloo">University of Waterloo</option>
+                    <option value="windsor">University of Windsor</option>
+                    <option value="western">University of Western Ontario</option>
+                    <option value="laurier">Wilfrid Laurier University</option>
+                    <option value="york">York University</option>
                   </select>
                 </div>
+
                 <div className="search_item">
                   <div>
                     <strong>Season of Visit</strong>
                   </div>
                   <select
+                    onChange={e => this.setState({ class: e.target.value })}
                     type="text"
                     className="season search_input"
                     required="required"
                   >
                     <option>What season would you like to visit?</option>
-                    <option>Fall</option>
-                    <option>Winter</option>
-                    <option>Spring</option>
+                    <option value = "fall">Fall</option>
+                    <option value = "winter">Winter</option>
+                    <option value = "spring">Spring</option>
                   </select>
                 </div>
+
                 <div className="search_item">
                   <div>
                     <strong>Amount of travellers</strong>
                   </div>
                   <select
+                    onChange={e => this.setState({ class: e.target.value })}
                     name="travellers"
                     id="travellers_1"
                     className="amountTravellers search_input"
                     required="required"
                   >
-                    <option>How many travellers will are there?</option>
-                    <option>01</option>
-                    <option>02</option>
-                    <option>03</option>
-                    <option>04</option>
-                    <option>05</option>
-                    <option>06</option>
-                    <option>07</option>
-                    <option>08</option>
-                    <option>09</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
-                    <option>14</option>
-                    <option>15</option>
-                    <option>16</option>
-                    <option>17</option>
-                    <option>18</option>
-                    <option>19</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
+                    <option>How many travellers are there?</option>
+                    <option value = "1">01</option>
+                    <option value = "2">02</option>
+                    <option value = "3">03</option>
+                    <option value = "4">04</option>
+                    <option value = "5">05</option>
+                    <option value = "6">06</option>
+                    <option value = "7">07</option>
+                    <option value = "8">08</option>
+                    <option value = "9">09</option>
+                    <option value = "10">10</option>
+                    <option value = "11">11</option>
+                    <option value = "12">12</option>
+                    <option value = "13">13</option>
+                    <option value = "14">14</option>
+                    <option value = "15">15</option>
+                    <option value = "16">16</option>
+                    <option value = "17">17</option>
+                    <option value = "18">18</option>
+                    <option value = "19">19</option>
+                    <option value = "20">20</option>
+                    <option value = "21">21</option>
+                    <option value = "22">22</option>
+                    <option value = "23">23</option>
+                    <option value = "24">24</option>
+                    <option value = "25">25</option>
                   </select>
                 </div>
                 <button className="button search_button">
@@ -155,6 +162,7 @@ class brokerSearch extends Component {
                 </button>
               </form>
             </div>
+
             <div className="search_item_cool">
               <form>
                 <div>
