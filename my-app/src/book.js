@@ -5,7 +5,7 @@ import "./tourSearch.css";
 class book extends Component {
 
     state = {
-        uni: "brock university",
+        uni: "Ryerson University",
         date: '1/10/2019',
         departureCity: null,
         class: null,
@@ -93,10 +93,16 @@ class book extends Component {
             newDate+=s1;
         }
 
-        var url = 'https://www.kayak.com/flights/'+this.state.departureAirport+"-"+this.state.nearestAirport+"/"+newDate;
+        var url = 'https://www.kayak.com/flights/'+"LAX"+"-YYZ"+"/"+newDate;
         console.log(url);
 
         window.open(url)
+    }
+
+    searchHotels(){
+        var url = 'https://www.kayak.com/hotels/Toronto,Canada-16078/2019-10-20/2019-10-22'
+
+        window.open(url);
     }
 
     loadAirports(){
@@ -109,20 +115,6 @@ class book extends Component {
         });
 
     }
-
-  searchFlights() {
-    axios
-      .post("http://localhost:4000/searchFlights", {
-        people: this.state.people,
-        departureCity: this.state.city,
-        class: this.state.class,
-        uniAirport: this.state.nearestAirport,
-        date: this.state.date
-      })
-      .then(res => {
-        this.setState({ flightData: res.data });
-      });
-  }
 
   loadAirports(val) {
     console.log("loadairports");
@@ -153,8 +145,6 @@ class book extends Component {
           onChange={e => (this.state.departureCity = e.target.value)}
           style={{ width: "200px" }}
         />
-        <br />
-        <button className="bookLabel" onClick={() => this.loadAirports(city)}>Confirm City</button>
 		<br />
         <select onChange={(e)=>this.setState({departureAirport:e.target.value})}>
             {this.state.originAirports.map(MakeItem)}
@@ -181,7 +171,7 @@ class book extends Component {
         />
 
         <br />
-        <button className="bookLabel" onClick={()=>this.searchFlights()}>Search Hotels</button>
+        <button className="bookLabel" onClick={()=>this.searchHotels()}>Search Hotels</button>
       </div>
     );
   }
