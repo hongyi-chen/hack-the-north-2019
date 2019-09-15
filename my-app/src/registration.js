@@ -2,18 +2,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './login.css';
 import './assets/css/main.css';
-import firebase from "firebase";
-
-const firebaseConfig = {
-	apiKey: "AIzaSyC08FLEjf003pV-j9t9pYHs2eu_MahFqfs",
-	authDomain: "hack-the-north2019.firebaseapp.com",
-	databaseURL: "https://hack-the-north2019.firebaseio.com",
-	projectId: "hack-the-north2019",
-	storageBucket: "hack-the-north2019.appspot.com",
-	messagingSenderId: "683328898630",
-	appId: "1:683328898630:web:42481d6cc2ff9ffd722c47"
-  };
-
 
 class registration extends Component{
   state = {
@@ -25,14 +13,14 @@ class registration extends Component{
   };
 
   registration = () => {
-	console.log(this.state.email);
-	console.log(1);
-    const userSend =  this.state.email;
-	const passSend = this.state.password;
-	const auth = firebase.auth();
-	const promise = auth.createUserWithEmailAndPassword(userSend, passSend);
-	
-	promise.catch(e => console.log(e.message));
+    axios.post('http:/localhost:4000/login',{
+      username: this.state.username,
+	  password: this.state.password,
+	  firstName: this.state.firstName,
+	  lastName: this.state.lastName,
+	  email: this.state.email,
+    }).then((res)=>{
+    });
   }
 
   render(){
@@ -76,7 +64,7 @@ class registration extends Component{
 				onChange={(e)=> this.setState.password=e.target.value}
 				style={{ width: '200px' }}
 			/>
-			<button className="login" onClick={()=>this.registration()}>Register</button>
+			<button className="login" onClick={()=>this.login()}>Register</button>
 		</div>
         <script src="https://sbhc.portalhc.com/219008/searchbox/468509"></script>
       </div>
