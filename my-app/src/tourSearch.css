@@ -1,6 +1,6 @@
 .search_panel
 {
-	display: none !important;
+	display: flex;
 	width: 100%;
 	height: 100%;
 	-webkit-animation: fadeEffect 1s;
@@ -8,7 +8,7 @@
 }
 .search_panel.active
 {
-	display: flex!important;
+	display: flex;
 }
 .search_panel_content
 {
@@ -27,18 +27,6 @@
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
 	color: #929191;
-}
-.search_item:first-child
-{
-	width: 30.453%;
-}
-.search_item:nth-child(2)
-{
-	width: 30.453%;
-}
-.search_item:nth-child(3)
-{
-	width: 30.453%;
 }
 .search_item div
 {
@@ -119,3 +107,25 @@
 {
 	opacity: 0.8;
 }
+.cool {
+	display: flex;
+	background-color: #ff4486;
+}
+
+button.bookLabel {
+		width: 20%;
+		height: 10%;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+h2.bookLabel {
+	text-align: center;
+	margin-top: 25px;
+}
+.bookLabel{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;	
+}
+
+/*book page css*/
