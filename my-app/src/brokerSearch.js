@@ -219,7 +219,7 @@ class brokerSearch extends Component {
                 </div>
                 <div className="search_item_cool">
                 <form>
-                <div>
+                <div className="search_item_cool2">
                   <strong>Upload .CSV (student info):</strong>
                 </div>
                 <FileUploader

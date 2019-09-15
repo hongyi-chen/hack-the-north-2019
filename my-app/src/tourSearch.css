@@ -60,9 +60,11 @@
     font-family: 'Open Sans', sans-serif;
 	color: #FFFFFF;
 	text-transform: uppercase;
-    margin-bottom: 7px;
-    margin-top: 30px;
+    margin-bottom: 14px;
+    margin-top: 14px;
+
 }
+
 .dropdown_item_select
 {
 	-webkit-appearance:none;
