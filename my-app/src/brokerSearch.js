@@ -17,11 +17,16 @@ firebase.initializeApp(firebaseConfig);
 
 class ProfilePage extends Component {
   state = {
-    username: "",
-    avatar: "",
+    username: null,
+    avatar: null,
     isUploading: false,
     progress: 0,
-    avatarURL: ""
+    avatarURL: null,
+
+    uniDestination:null,
+    visitSeason:null,
+    amountTravellers:null,
+
   };
   handleChangeUsername = event =>
     this.setState({ username: event.target.value });
