@@ -78,7 +78,7 @@ class registration extends Component{
 				style={{ width: '200px' }}
 			  />
 			<input className="login"
-				type="text"
+				type="password"
 				placeholder="Password"
 				onChange={(e)=> this.setState({password: e.target.value})}
 				style={{ width: '200px' }}

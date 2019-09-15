@@ -248,7 +248,7 @@ class brokerSearch extends Component {
           {/* Search Contents */}
           <div className="container fill_height">
             {/* Search Panel */}
-            <div className="search_panel active">
+            <div className="search_panel active" style={{display: 'inline-block'}}>
               <form
                 action="#"
                 id="search_form_1"
@@ -362,7 +362,8 @@ class brokerSearch extends Component {
                 />
               </form>
             </div>
-                <a onClick={()=> this.setState({toBook: true})}>
+				<br />
+                <a class="pinkthing" onClick={()=> this.setState({toBook: true})}>
               {boxes}
               </a>
             </div>
