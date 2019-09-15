@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./tourSearch.css";
-import './assets/css/main.css';
 import "./login.css";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
