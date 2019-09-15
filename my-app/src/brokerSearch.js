@@ -78,7 +78,11 @@ class brokerSearch extends Component {
     }
 
   componentDidMount() {
-    this.setState({email: this.props.location.data.email});
+    if(!this.props.location.data){
+      console.log('didnt get email');
+       this.setState({email: 'erica.wang.moyang@gmail.com'});
+    }
+    else this.setState({email: this.props.location.data.email});
   }
 
   state = {

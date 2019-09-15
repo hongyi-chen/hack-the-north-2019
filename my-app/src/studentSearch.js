@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import "./tourSearch.css";
 import axios from "axios";
+import Tour from './tour';
 
 class studentSearch extends Component {
 
@@ -10,8 +11,11 @@ class studentSearch extends Component {
     }
 
   componentDidMount() {
-    this.setState({email: this.props.location.data.email});
-    console.log(this.state.email);
+    if(!this.props.location.data){
+      console.log('didnt get email');
+       this.setState({email: 'erica.wang.moyang@gmail.com'});
+    }
+    else this.setState({email: this.props.location.data.email});
   }
 
   state = {
@@ -25,21 +29,36 @@ class studentSearch extends Component {
     duration: null,
     spots: null,
     nearestAirport: null,
-    nearestAirportName: null
+    nearestAirportName: null,
+    showTours: []
   };
 
   searchTours(){
+
+    console.log(this.states);
+
     axios
       .post("http://localhost:4000/searchTours",{
-        uniDestination: this.state.uniDestinations,
+        uniDestination: this.state.uniDestination,
         visitSeason: this.state.visitSeason,
         amountTravellers: this.state.amountTravellers
       })
       .then(res => {
+        var tours = res.data;
         console.log(res.data);
+        this.setState({showTours:tours});
+        console.log(this.state.showTours);
       })
   }
+
   render() {
+
+    var boxes = [];
+
+    for(var js of this.state.showTours){
+      console.log(js);
+      boxes.push(<Tour data={js} />);
+    }
     return (
       <div>
         <header id="header" className="container">
@@ -70,22 +89,22 @@ class studentSearch extends Component {
                     required="required"
                   >
                     <option>What is your university destination?</option>
-                    <option value="brock">Brock University</option>
-                    <option value="carleton">Carleton University</option>
-                    <option value="mcmaster">McMaster University</option>
-                    <option value="ocad">OCAD University</option>
-                    <option value="queens">Queen's University</option>
-                    <option value="ryerson">Ryerson University</option>
-                    <option value="guelph">University of Guelph</option>
-                    <option value="ottawa">University of Ottawa</option>
-                    <option value="toronto">University of Toronto</option>
-                    <option value="waterloo">University of Waterloo</option>
-                    <option value="windsor">University of Windsor</option>
-                    <option value="western">
+                    <option value="Brock University">Brock University</option>
+                    <option value="Carleton University">Carleton University</option>
+                    <option value="McMaster University">McMaster University</option>
+                    <option value="OCAD University">OCAD University</option>
+                    <option value="Queen's University">Queen's University</option>
+                    <option value="Ryerson University">Ryerson University</option>
+                    <option value="University of Guelph">University of Guelph</option>
+                    <option value="University of Ottawa">University of Ottawa</option>
+                    <option value="University of Toronto">University of Toronto</option>
+                    <option value="University of Waterloo">University of Waterloo</option>
+                    <option value="University of Windsor">University of Windsor</option>
+                    <option value="University of Western Ontario">
                       University of Western Ontario
                     </option>
-                    <option value="laurier">Wilfrid Laurier University</option>
-                    <option value="york">York University</option>
+                    <option value="Wilfrid Laurier University">Wilfrid Laurier University</option>
+                    <option value="York University">York University</option>
                   </select>
                 </div>
 
@@ -100,9 +119,9 @@ class studentSearch extends Component {
                     required="required"
                   >
                     <option>What season would you like to visit?</option>
-                    <option value="fall">Fall</option>
-                    <option value="winter">Winter</option>
-                    <option value="spring">Spring</option>
+                    <option value="Fall">Fall</option>
+                    <option value="Winter">Winter</option>
+                    <option value="Spring">Spring</option>
                   </select>
                 </div>
 
@@ -145,47 +164,15 @@ class studentSearch extends Component {
                     <option value="25">25</option>
                   </select>
                 </div>
-                <button className="button search_button">
-                  search
+                <button onClick={()=> this.searchTours()}>
+                  Search
                   <span />
                   <span />
                   <span />
                 </button>
               </form>
+              {boxes}
             </div>
-			<div id="features-wrapper">
-                <div>
-                  {/* Box */}
-                  <section className="box feature cool">
-                    <div className="inner">
-                      <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
-                      <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
-                      <p><i className="fas fa-calendar-day" />  <b>Date</b>: <span>{this.state.date}</span></p>
-                      <p><i className="fas fa-clock" />  <b>Time</b>: <span>{this.state.time}</span></p>
-                      <p><i className="fas fa-hourglass" />  <b>Duration</b>: <span>{this.state.duration}</span></p>
-                      <p><i className="fas fa-list-ol" />  <b>Available Spots</b>: <span>{this.state.spots}</span></p>
-                      <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{this.state.nearestAirportName}</span></p>
-                    </div>
-                  </section>
-				</div>
-			  </div>
-			  
-			  <div id="features-wrapper">
-                <div>
-                  {/* Box */}
-                  <section className="box feature cool">
-                    <div className="inner">
-                      <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
-                      <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
-                      <p><i className="fas fa-calendar-day" />  <b>Date</b>: <span>{this.state.date}</span></p>
-                      <p><i className="fas fa-clock" />  <b>Time</b>: <span>{this.state.time}</span></p>
-                      <p><i className="fas fa-hourglass" />  <b>Duration</b>: <span>{this.state.duration}</span></p>
-                      <p><i className="fas fa-list-ol" />  <b>Available Spots</b>: <span>{this.state.spots}</span></p>
-                      <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{this.state.nearestAirportName}</span></p>
-                    </div>
-                  </section>
-				</div>
-			  </div>
           </div>
         </div>
         );

@@ -28,21 +28,21 @@ app.post('/searchTours', function (req,res){
 	var uniDestination = req.body.uniDestination;
 	var visitSeason = req.body.visitSeason;
 	var amountTravellers = req.body.amountTravellers;
-	console.log(req.body);
 
 	axios.get('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/get_all_tours')
 	.then((result)=>{
 		result = result.data;
 		var matches = [];
-		console.log(result.length);
-		for(var k = 0; k<20; k++){
-			var tour = result[k];
-			console.log(tour);
+		for(var k of result){
+			var tour = k;
 			if(tour.UniversityName==uniDestination && tour.Season==visitSeason){
 				//if()
-				matches.push(result[k]);
+				matches.push(tour);
 			}
+    	}
+		for(var k = 0; k<20; k++){
 		}
+		console.log(matches);
 		return res.json(matches);
 	});
 });

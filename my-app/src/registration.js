@@ -11,6 +11,14 @@ class registration extends Component{
         super(props);
     }
 
+  componentDidMount() {
+    if(!this.props.location.data){
+      console.log('didnt get status');
+       this.setState({personStatus: 'student'});
+    }
+    else this.setState({personStatus: this.props.location.data.personStatus});
+  }
+
   state = {
     email: null,
 	password: null,
@@ -20,11 +28,6 @@ class registration extends Component{
 	toBroker: false,
 	toStudent: false
   };
-
-  componentDidMount() {
-  	console.log(this.props.location.data.personStatus);
-  	this.setState({personStatus: this.props.location.data.personStatus});
-  }
 
   registration = () => {
   	console.log('registration');
