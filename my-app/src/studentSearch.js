@@ -17,7 +17,7 @@ class studentSearch extends Component {
         amountTravellers: this.state.amountTravellers
       })
       .then(res => {
-        //
+        console.log(res.data);
       })
   }
 
@@ -27,7 +27,7 @@ class studentSearch extends Component {
         <header id="header" className="container">
           {/* Logo */}
           <div id="logo">
-            <h1>tourhub</h1>
+          <h1><a href="/">tourhub</a></h1>
             <span>powered by Accenture.</span>
           </div>
         </header>
