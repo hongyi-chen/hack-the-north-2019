@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./tourSearch.css";
 
 class book extends Component {
 
@@ -144,40 +145,43 @@ class book extends Component {
     console.log(this.state.originAirports);
     return (
       <div>
-        <h2>Flights</h2>
+        <h2 className="bookLabel">Flights</h2>
 
-        <input
+        <input className="bookLabel"
           type="text"
           placeholder="Enter your departure city"
           onChange={e => (this.state.departureCity = e.target.value)}
           style={{ width: "200px" }}
         />
-        <button onClick={() => this.loadAirports(city)}>Confirm City</button>
-
+        <br />
+        <button className="bookLabel" onClick={() => this.loadAirports(city)}>Confirm City</button>
+		<br />
         <select onChange={(e)=>this.setState({departureAirport:e.target.value})}>
             {this.state.originAirports.map(MakeItem)}
         </select>
 
-        <select onChange={(e)=>this.setState({class:e.target.value})}>
-            <option value="e">Economy</option>
-            <option value="p">Premium Economy</option>
-            <option value="b">Business</option>
-            <option value="f">First Class</option>
+        <br />
+
+        <select className="bookLabel" onChange={(e)=>this.setState({class:e.target.value})}>
+            <option value="e"> Economy</option>
+            <option value="p"> Premium Economy</option>
+            <option value="b"> Business</option>
+            <option value="f"> First Class</option>
         </select>
 
-        <button onClick={()=>this.searchFlights()}>Search Flight</button>
-        
-        <hr></hr>
+        <br />
+        <button className="bookLabel" onClick={()=>this.searchFlights()}>Search Flight</button>
 
-        <h2>Hotels</h2>
-        <input
+        <h2 className="bookLabel">Hotels</h2>
+        <input class="bookLabel"
             type="text"
             placeholder="Enter the number of rooms"
             onChange={(e)=> this.state.departureCity = e.target.value}
             style={{ width: '200px' }}
         />
 
-        <button onClick={()=>this.searchFlights()}>Search Hotels</button>
+        <br />
+        <button className="bookLabel" onClick={()=>this.searchFlights()}>Search Hotels</button>
       </div>
     );
   }

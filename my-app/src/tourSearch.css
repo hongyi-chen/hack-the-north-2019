@@ -111,3 +111,21 @@
 	display: flex;
 	background-color: #ff4486;
 }
+
+button.bookLabel {
+		width: 20%;
+		height: 10%;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+h2.bookLabel {
+	text-align: center;
+	margin-top: 25px;
+}
+.bookLabel{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;	
+}
+
+/*book page css*/
