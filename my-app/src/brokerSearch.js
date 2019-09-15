@@ -4,7 +4,7 @@ import "./login.css";
 import firebase from "firebase";
 import axios from "axios";  
 import FileUploader from "react-firebase-file-uploader";
-import Papa from 'papaparse';
+//import Papa from 'papaparse';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC08FLEjf003pV-j9t9pYHs2eu_MahFqfs",
@@ -50,9 +50,9 @@ class DataController extends React.Component{
   async getCsvData() {
       let csvData = await this.fetchCsv();
 
-      Papa.parse(csvData, {
-          complete: this.getData
-      });
+      //Papa.parse(csvData, {
+        //  complete: this.getData
+     // });
   }
 
   render() {
@@ -117,7 +117,7 @@ class brokerSearch extends Component {
         <header id="header" className="container">
           {/* Logo */}
           <div id="logo">
-            <h1>tourhub</h1>
+            <h1><a href="/">tourhub</a></h1>
             <span>powered by Accenture.</span>
           </div>
         </header>
