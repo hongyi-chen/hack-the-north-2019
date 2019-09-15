@@ -40,8 +40,8 @@ class home extends Component {
             {/* Nav */}
             <nav id="nav">
               <ul>
-				<li className="current"><a href = "ontario-unis">Ontario Universities</a></li>
-                <li className="current"><a href = "login">Log In</a></li>
+				        <li className="current"> <a href = "uniInfo">Ontario Universities</a></li>
+                <li className="current"> <a href = "login">Log In</a></li>
               </ul>
             </nav>
           </header>
