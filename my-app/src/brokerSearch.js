@@ -240,6 +240,28 @@ class brokerSearch extends Component {
                 />
               </form>
             </div>
+			
+		
+
+			  <div id="features-wrapper">
+				<div className="container">
+				  {/* Box */}
+				  <section className="box feature" style={{backgroundColor: '#ff4486'}}>
+					<div className="inner">
+					  <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
+					  <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
+					  <p><i className="fas fa-calendar-day" />  <b>Date</b>: <span>{this.state.date}</span></p>
+					  <p><i className="fas fa-clock" />  <b>Time</b>: <span>{this.state.time}</span></p>
+					  <p><i className="fas fa-hourglass" />  <b>Duration</b>: <span>{this.state.duration}</span></p>
+					  <p><i className="fas fa-list-ol" />  <b>Available Spots</b>: <span>{this.state.spots}</span></p>
+					  <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{'{'}this.state.nearestAirport{'}'}</span></p>
+					</div>
+				  </section>
+				</div>
+			  </div>
+    );
+  }
+});
           </div>
         </div>
       </div>
