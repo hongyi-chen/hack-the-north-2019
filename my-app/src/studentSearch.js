@@ -33,7 +33,7 @@ class studentSearch extends Component {
 
   searchTours(){
 
-    console.log(this.states);
+    console.log(this.state);
 
     axios
       .post("http://localhost:4000/searchTours",{
@@ -44,7 +44,8 @@ class studentSearch extends Component {
       .then(res => {
         var tours = res.data;
         console.log(res.data);
-        this.setState({showTours:tours});
+        this.states.showTours = tours;
+        //this.setState({showTours:tours});
         console.log(this.state.showTours);
       })
   }

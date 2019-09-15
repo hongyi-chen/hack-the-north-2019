@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {BrowserRoouter as Router, Route, Link, Redirect} from "react-router-dom";
 import axios from 'axios';
 import './login.css';
 import './assets/css/main.css';
@@ -19,22 +20,30 @@ class registration extends Component{
   }
 
   state = {
-    username: null,
 	password: null,
 	firstName: null,
 	lastName: null,
-	email: null
+	email: null,
+	toStudent: false,
+	toBroker: false
   };
 
   registration = () => {
-	const userSend = this.state.username;
+	const userSend = this.state.email;
     const userPass = this.state.password;
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(userSend, userPass);
     promise.catch(e => console.log(e.message));
+
   }
 
   render(){
+  	if (this.state.toStudent === true) {
+      		return <Redirect to={{pathname: "/studentSearch", data: {email:this.state.email} }} />
+	}
+	if (this.state.toBroker === true) {
+  		return <Redirect to={{pathname: "/brokerSearch", data: {email:this.state.email} }} />
+	}
     return (
       <div>
 		<div id="log">
@@ -61,12 +70,6 @@ class registration extends Component{
 				type="text"
 				placeholder="Email"
 				onChange={(e)=> this.setState({email: e.target.value})}
-				style={{ width: '200px' }}
-			  />
-			<input className="login"
-				type="text"
-				placeholder="Username"
-				onChange={(e)=> this.setState({username: e.target.value})}
 				style={{ width: '200px' }}
 			  />
 			<input className="login"
