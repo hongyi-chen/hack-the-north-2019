@@ -2,6 +2,49 @@ import React, { Component } from "react";
 import "./tourSearch.css";
 import './assets/css/main.css';
 import "./login.css";
+import firebase from "firebase";
+import FileUploader from "react-firebase-file-uploader";
+ 
+const firebaseConfig = {
+  apiKey: "AIzaSyC08FLEjf003pV-j9t9pYHs2eu_MahFqfs",
+  authDomain: "hack-the-north2019.firebaseapp.com",
+  databaseURL: "https://hack-the-north2019.firebaseio.com",
+  projectId: "hack-the-north2019",
+  storageBucket: "hack-the-north2019.appspot.com",
+  messagingSenderId: "683328898630",
+  appId: "1:683328898630:web:42481d6cc2ff9ffd722c47"
+};
+firebase.initializeApp(firebaseConfig);
+
+class ProfilePage extends Component {
+  state = {
+    username: "",
+    avatar: "",
+    isUploading: false,
+    progress: 0,
+    avatarURL: ""
+  };
+  handleChangeUsername = event =>
+    this.setState({ username: event.target.value });
+  handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+  handleProgress = progress => this.setState({ progress });
+  handleUploadError = error => {
+    this.setState({ isUploading: false });
+    console.error(error);
+  };
+  handleUploadSuccess = filename => {
+    this.setState({ avatar: filename, progress: 100, isUploading: false });
+    firebase
+      .storage()
+      .ref("images")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => this.setState({ avatarURL: url }));
+  };
+}
+
+
+
 
 class brokerSearch extends Component {
   render() {
@@ -92,7 +135,30 @@ class brokerSearch extends Component {
             </div>
           </div>
         </div>
-        );
+        <div id = "file upload">
+        <form>
+          <label>Username:</label>
+          <input
+            type="text"
+            value={this.state.username}
+            name="username"
+            onChange={this.handleChangeUsername}
+          />
+          <label>Avatar:</label>
+          {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
+          {this.state.avatarURL && <img src={this.state.avatarURL} />}
+          <FileUploader
+            accept="image/*"
+            name="avatar"
+            randomizeFilename
+            storageRef={firebase.storage().ref("images")}
+            onUploadStart={this.handleUploadStart}
+            onUploadError={this.handleUploadError}
+            onUploadSuccess={this.handleUploadSuccess}
+            onProgress={this.handleProgress}
+          />
+        </form>
+      </div>
       </div>
     );
   }
