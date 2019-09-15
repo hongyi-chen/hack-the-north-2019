@@ -38,7 +38,8 @@ app.post('/searchTours', function (req,res){
 		for(var k = 0; k<20; k++){
 			var tour = result[k];
 			console.log(tour);
-			if(tour.UniversityName==uniDestination && tour.Season==visitSeason && tour.Size>=amountTravellers){
+			if(tour.UniversityName==uniDestination && tour.Season==visitSeason){
+				//if()
 				matches.push(result[k]);
 			}
 		}
@@ -71,7 +72,6 @@ var bookFlights = (url, key, clas, date)=>{
 	});
 }
 
->>>>>>> f6e968b096c8183090d304be42706f38a44d1ad6
 app.post('/loadAirports', function (req, res){
 
 	var departureCity = req.body.departureCity;

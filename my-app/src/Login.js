@@ -20,8 +20,6 @@ class login extends Component{
   };
 
   login = () => {
-    console.log('login');
-    console.log(this.state);
     const userSend = this.state.username;
     const userPass = this.state.password;
     const auth = firebase.auth();
