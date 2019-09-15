@@ -28,10 +28,11 @@ app.post('/book', function (req, res){
 	res.send(200);
 });
 
-app.post('/tourinfo', function (req,res){
+app.post('/tourinfo', function (req,res){c
     var allTours = 'hello';
     axios.get('http://accentour-final-platinum.uedpnpkwfs.us-east-2.elasticbeanstalk.com/get_all_tours')
     .then((result)=>{
+		allTours;
     });
     return res.json(allTours);
 });
