@@ -3,6 +3,19 @@ import {BrowserRoouter as Router, Route, Link, Redirect} from "react-router-dom"
 
 import './assets/css/main.css';
 import bu from './assets/uniPics/bu.jpg';
+import cu from './assets/uniPics/cu.jpg';
+import mu from './assets/uniPics/mu.jpg';
+import ou from './assets/uniPics/ou.jpg';
+import qu from './assets/uniPics/qu.jpg';
+import ru from './assets/uniPics/ru.jpg';
+import ug from './assets/uniPics/ug.jpg';
+import uo from './assets/uniPics/uo.jpg';
+import ut from './assets/uniPics/ut.jpg';
+import uw from './assets/uniPics/uw.jpg';
+import wu from './assets/uniPics/wu.jpg';
+import uofw from './assets/uniPics/uofw.jpg';
+import wlu from './assets/uniPics/wlu.jpg';
+import yu from './assets/uniPics/yu.jpg';
 
 class uniInfo extends Component {
   render() {
@@ -19,7 +32,7 @@ class uniInfo extends Component {
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://carleton.ca/" target="_blank" className="image featured"><img src="assets/uniPics/cu.jpg" alt="" /></a>
+                  <a href="https://carleton.ca/" target="_blank" className="image featured"><img src={cu} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>Carleton University<br /><i className="fa fa-map-marker" />Ottawa</h2>
@@ -29,11 +42,10 @@ class uniInfo extends Component {
                   </div>
                 </section>
               </div>
-
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.mcmaster.ca/" target="_blank" className="image featured"><img src="assets/uniPics/mu.jpg" alt="" /></a>
+                  <a href="https://www.mcmaster.ca/" target="_blank" className="image featured"><img src={mu} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>McMaster University<br /><i className="fa fa-map-marker" />Hamilton</h2>
@@ -43,11 +55,10 @@ class uniInfo extends Component {
                   </div>
                 </section>
               </div>
-
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.ocadu.ca/" target="_blank" className="image featured"><img src="assets/uniPics/ou.jpg" alt="" /></a>
+                  <a href="https://www.ocadu.ca/" target="_blank" className="image featured"><img src={ou} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>OCAD University<br /><i className="fa fa-map-marker" />Toronto</h2>
@@ -69,7 +80,7 @@ class uniInfo extends Component {
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.queensu.ca/" target="_blank" className="image featured"><img src="assets/uniPics/qu.jpg" alt="" /></a>
+                  <a href="https://www.queensu.ca/" target="_blank" className="image featured"><img src={qu} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>Queen’s University<br /><i className="fa fa-map-marker" />Kingston</h2>
@@ -79,11 +90,10 @@ class uniInfo extends Component {
                   </div>
                 </section>
               </div>
-
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.ryerson.ca/" target="_blank" className="image featured"><img src="assets/uniPics/ru.jpg" alt="" /></a>
+                  <a href="https://www.ryerson.ca/" target="_blank" className="image featured"><img src={ru} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>Ryerson University<br /><i className="fa fa-map-marker" />Toronto</h2>
@@ -93,11 +103,10 @@ class uniInfo extends Component {
                   </div>
                 </section>
               </div>
-
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.uoguelph.ca/" target="_blank" className="image featured"><img src="assets/uniPics/ug.jpg" alt="" /></a>
+                  <a href="https://www.uoguelph.ca/" target="_blank" className="image featured"><img src ={ug} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>University of Guelph<br /><i className="fa fa-map-marker" />Guelph</h2>
@@ -119,7 +128,7 @@ class uniInfo extends Component {
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.uottawa.ca/en" target="_blank" className="image featured"><img src="assets/uniPics/uo.jpg" alt="" /></a>
+                  <a href="https://www.uottawa.ca/en" target="_blank" className="image featured"><img src={uo} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>University of Ottawa<br /><i className="fa fa-map-marker" />Ottawa</h2>
@@ -129,11 +138,10 @@ class uniInfo extends Component {
                   </div>
                 </section>
               </div>
-
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.utoronto.ca/" target="_blank" className="image featured"><img src="assets/uniPics/ut.jpg" alt="" /></a>
+                  <a href="https://www.utoronto.ca/" target="_blank" className="image featured"><img src={ut} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>University of Toronto<br /><i className="fa fa-map-marker" />Toronto</h2>
@@ -143,11 +151,10 @@ class uniInfo extends Component {
                   </div>
                 </section>
               </div>
-
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://uwaterloo.ca/" target="_blank" className="image featured"><img src="assets/uniPics/uw.jpg" alt="" /></a>
+                  <a href="https://uwaterloo.ca/" target="_blank" className="image featured"><img src={uw} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>University of Waterloo<br /><i className="fa fa-map-marker" />Waterloo</h2>
@@ -179,11 +186,10 @@ class uniInfo extends Component {
                   </div>
                 </section>
               </div>
-
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="http://www.uwindsor.ca/" target="_blank" className="image featured"><img src="assets/uniPics/uofw.jpg" alt="" /></a>
+                  <a href="http://www.uwindsor.ca/" target="_blank" className="image featured"><img src={uofw} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>University of Windsor<br /><i className="fa fa-map-marker" />Windsor</h2>
@@ -193,11 +199,10 @@ class uniInfo extends Component {
                   </div>
                 </section>
               </div>
-
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.uwo.ca/" target="_blank" className="image featured"><img src="assets/uniPics/wu.jpg" alt="" /></a>
+                  <a href="https://www.uwo.ca/" target="_blank" className="image featured"><img src={wu} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>Western University<br /><i className="fa fa-map-marker" />London</h2>
@@ -218,7 +223,7 @@ class uniInfo extends Component {
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.wlu.ca/" target="_blank" className="image featured"><img src="assets/uniPics/wlu.jpg" alt="" /></a>
+                  <a href="https://www.wlu.ca/" target="_blank" className="image featured"><img src={wlu} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>Wilfred Laurier University<br /><i className="fa fa-map-marker" />Waterloo</h2>
@@ -228,11 +233,10 @@ class uniInfo extends Component {
                   </div>
                 </section>
               </div>
-
               <div className="col-4 col-12-medium">
                 {/* Box */}
                 <section className="box feature">
-                  <a href="https://www.yorku.ca/" target="_blank" className="image featured"><img src="assets/uniPics/yu.jpg" alt="" /></a>
+                  <a href="https://www.yorku.ca/" target="_blank" className="image featured"><img src={yu} alt="" /></a>
                   <div className="inner">
                     <header>
                       <h2>York University<br /><i className="fa fa-map-marker" />Toronto</h2>

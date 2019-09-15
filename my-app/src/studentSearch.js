@@ -1,12 +1,31 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import "./tourSearch.css";
 import axios from "axios";
 
 class studentSearch extends Component {
+
+  constructor(props) {
+        super(props);
+    }
+
+  componentDidMount() {
+    this.setState({email: this.props.location.data.email});
+    console.log(this.state.email);
+  }
+
   state = {
+    email: null,
     uniDestination: null,
     visitSeason: null,
-    amountTravellers: null
+    amountTravellers: null,
+    universityName: null,
+    date: null,
+    time: null,
+    duration: null,
+    spots: null,
+    nearestAirport: null,
+    nearestAirportName: null
   };
 
   searchTours(){
@@ -20,16 +39,6 @@ class studentSearch extends Component {
         console.log(res.data);
       })
   }
-  state = {
-		universityName: null,
-		date: null,
-		time: null,
-		duration: null,
-		spots: null,
-		nearestAirport: null,
-		nearestAirportName: null
-	}
-
   render() {
     return (
       <div>
@@ -147,7 +156,24 @@ class studentSearch extends Component {
 			<div id="features-wrapper">
                 <div>
                   {/* Box */}
-                  <section className="box feature cool" style={{backgroundColor: '#ff4486', width:'30.453%'}}>
+                  <section className="box feature cool">
+                    <div className="inner">
+                      <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
+                      <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
+                      <p><i className="fas fa-calendar-day" />  <b>Date</b>: <span>{this.state.date}</span></p>
+                      <p><i className="fas fa-clock" />  <b>Time</b>: <span>{this.state.time}</span></p>
+                      <p><i className="fas fa-hourglass" />  <b>Duration</b>: <span>{this.state.duration}</span></p>
+                      <p><i className="fas fa-list-ol" />  <b>Available Spots</b>: <span>{this.state.spots}</span></p>
+                      <p><i className="fas fa-plane" />  <b>Nearest Airport</b>: <span>{this.state.nearestAirport}</span> <span>{this.state.nearestAirportName}</span></p>
+                    </div>
+                  </section>
+				</div>
+			  </div>
+			  
+			  <div id="features-wrapper">
+                <div>
+                  {/* Box */}
+                  <section className="box feature cool">
                     <div className="inner">
                       <p><i className="fas fa-school" />  <b>University</b>: <span>{this.state.universityName}</span></p>
                       <p><i className="fas fa-cloud-sun" />  <b>Season</b>: <span>{this.state.season}</span></p>
