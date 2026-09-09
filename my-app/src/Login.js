@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './login.css';
 import './assets/css/main.css';
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC08FLEjf003pV-j9t9pYHs2eu_MahFqfs",
