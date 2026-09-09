@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRoouter as Router, Route, Link, Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
 
 import './assets/css/main.css';
 import './assets/css/images/bg01.png';

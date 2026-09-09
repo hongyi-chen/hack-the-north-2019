@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import {BrowserRoouter as Router, Route, Link, Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
 import "./tourSearch.css";
 import "./login.css";
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/storage";
 import axios from "axios";  
 import FileUploader from "react-firebase-file-uploader";
 import Tour from "./tour";

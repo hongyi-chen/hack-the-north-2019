@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {BrowserRoouter as Router, Route, Link, Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
 import axios from 'axios';
 import './login.css';
 import './assets/css/main.css';
-import firebase from 'firebase';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 class registration extends Component{
 
